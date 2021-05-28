@@ -1,0 +1,2 @@
+To run production mode in terminal: 'npm run start'
+To run development mode in terminal: 'npm run dev'
