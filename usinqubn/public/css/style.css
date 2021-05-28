@@ -10,7 +10,7 @@ body {
     background: #E4E6EB;
     height: 100vh;
     width: 100%;
-    overflow:hidden;
+    overflow: hidden;
 }
 
 /*.container{
@@ -24,6 +24,30 @@ p {
     margin: 10px 0 !important;
 }
 
+/*login page*/
+
+.login-container {
+    text-align: center;
+}
+
+/*Transactions Section */
+.m-b-15 h1 {
+    text-align: center;
+}
+
+.addTransactions {
+    position: absolute;
+    bottom: 40%;
+    right: 30%;
+}
+
+tr,
+td {
+    text-align: center;
+}
+
+
+
 /*navbar & sidebar*/
 
 .navbar {
@@ -34,18 +58,12 @@ p {
     .fixed-top {
         display: flex;
     }
-    
+
     .fixed-bottom {
         display: block;
-    } 
+    }
 
     .sidebar {
         display: none;
     }
-}
-
-/*login page*/
-
-.login-container {
-    text-align: center;
 }
