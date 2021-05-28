@@ -1,0 +1,30 @@
+.navbar {
+    background: #1C1E21;
+    color:#B0B3B8;
+}
+
+.navbar .logo {
+    display: flex;
+    align-items: center; 
+    pointer-events: none;
+}
+
+.navbar .logo img {
+    height: 50px;
+    width: auto;
+    margin-right:5px;
+}
+
+.navbar .logo .logo_name {
+    color: #B0B3B8;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.navbar a {
+    text-decoration: none;
+    color:#B0B3B8;
+}
+.navbar i {
+    font-size: 30px;
+}

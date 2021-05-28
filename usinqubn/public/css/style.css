@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
+
+* {
+    font-family: 'Arvo', serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #E4E6EB;
+    height: 100vh;
+    width: 100%;
+    overflow:hidden;
+}
+
+/*.container{
+    position: absolute;
+    height: 100%;
+    width: calc(100% - 240px);
+    left: 240px;
+}*/
+
+p {
+    margin: 10px 0 !important;
+}
+
+/*navbar & sidebar*/
+
+.navbar {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .fixed-top {
+        display: flex;
+    }
+    
+    .fixed-bottom {
+        display: block;
+    } 
+
+    .sidebar {
+        display: none;
+    }
+}
+
+/*login page*/
+
+.login-container {
+    text-align: center;
+}
