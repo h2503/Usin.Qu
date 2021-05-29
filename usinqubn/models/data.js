@@ -19,6 +19,11 @@ const DataSchema = new mongoose.Schema({
         trim: true,
         required:true
     },
+    mode: {
+        type: String,
+        default: 'Cash',
+        enum: ['Cash', 'Credit Card', 'Debit Card', 'Net Banking', 'Cheque']
+    },
     comment: {
         type: String
     }
