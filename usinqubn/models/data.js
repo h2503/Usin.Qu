@@ -9,6 +9,11 @@ const DataSchema = new mongoose.Schema({
         type: Date,
         default: Date.now,
     },
+    type: {
+        type: String,
+        default: 'Expense',
+        enum: ['Income', 'Expense'],
+    },
     category: {
         type: String,
         default: 'Others',
@@ -17,7 +22,7 @@ const DataSchema = new mongoose.Schema({
     amount: {
         type: Number,
         trim: true,
-        required:true
+        required:true,
     },
     mode: {
         type: String,
@@ -25,7 +30,7 @@ const DataSchema = new mongoose.Schema({
         enum: ['Cash', 'Credit Card', 'Debit Card', 'Net Banking', 'Cheque']
     },
     comment: {
-        type: String
+        type: String,
     }
 })
 

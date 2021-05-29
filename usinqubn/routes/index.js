@@ -22,7 +22,7 @@ router.get('/dashboard', ensureAuth, async (req, res) => {
             title: "Dashboard",
             name: req.user.displayName,
             dp: req.user.image,
-            transactionData
+            transactionData,
         })
     } catch (err) {
         console.error(err)
@@ -59,15 +59,16 @@ router.post('/', ensureAuth, async(req, res) => {
 router.get('/history', ensureAuth, async (req, res) => {
     try {
         const transactionData = await Data.find({ user: req.user.id }).lean() //pass in transaction data according to the logged in user
-        res.render('dashboard', {
-            title: "Dashboard",
+        res.render('history', {
+            title: "History",
             name: req.user.displayName,
             dp: req.user.image,
             transactionData
         })
+        console.log(transactionData)
     } catch (err) {
         console.error(err)
-        res.render('error/500')
+        res.render('errors/500')
     } 
 })
 //@desc Financial-advices

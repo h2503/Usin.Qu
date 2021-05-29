@@ -4,17 +4,49 @@
       <hr />
       <br>
     </div>
-    <table id="example" class="table table-striped table-bordered" style="width:100%">
+    
+      <table id="example" class="table table-striped table-bordered" style="width:100%">
         <thead>
             <tr>
                 <th>Date</th>
-                <th>History Amount</th>
+                <th>Type</th>
                 <th>Category</th>
+                <th>Amount</th>
                 <th>Comments</th>
                 <th>Edit/Delete</th>
             </tr>
         </thead>
         <tbody>
+            <% for( let i = 0; i < transactionData.length; i++ ) { %>
+              <tr>
+                <td><%- transactionData[i].date %> </td>
+                <td><%- transactionData[i].type %> </td>
+                <td><%- transactionData[i].category %> </td>
+                <td><%- transactionData[i].mode %> </td>
+                <td><span><%- transactionData[i].amount %></span></td>
+                <td><%- transactionData[i].comment %> </td>
+                <td> 
+                </td>   
+              </tr>
+            <% } %>
+        </tbody>
+      </table>
+   
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
             <tr>
                 <td>2011/04/25</td>
                 <td>$20.00</td>
@@ -319,6 +351,8 @@
         class="text-decoration-none"
         ><i class="fas fa-trash-alt"></i></a>
 </tr>
+
         </tbody>
     </table>
   </div>
+-->
