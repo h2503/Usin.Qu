@@ -69,7 +69,6 @@ router.get('/history', ensureAuth, async (req, res) => {
             transactionData,
             moment: moment
         })
-        console.log(transactionData)
     } catch (err) {
         console.error(err)
         res.render('errors/500')
