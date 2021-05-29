@@ -25,6 +25,7 @@ router.get('/dashboard', ensureAuth, async (req, res) => {
             name: req.user.displayName,
             dp: req.user.image,
             transactionData,
+            moment: moment
         })
     } catch (err) {
         console.error(err)
