@@ -4,6 +4,8 @@ const { ensureAuth, ensureGuest } = require ('../middleware/auth')
 
 const Data = require('../models/data')
 
+const moment = require('moment')
+
 //@desc Landing Page
 //@route GET /login
 router.get('/', ensureGuest, (req, res) => {
@@ -63,7 +65,8 @@ router.get('/history', ensureAuth, async (req, res) => {
             title: "History",
             name: req.user.displayName,
             dp: req.user.image,
-            transactionData
+            transactionData,
+            moment: moment
         })
         console.log(transactionData)
     } catch (err) {

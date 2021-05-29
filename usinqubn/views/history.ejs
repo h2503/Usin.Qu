@@ -11,6 +11,7 @@
                 <th>Date</th>
                 <th>Type</th>
                 <th>Category</th>
+                <th>Mode</th>
                 <th>Amount</th>
                 <th>Comments</th>
                 <th>Edit/Delete</th>
@@ -23,7 +24,7 @@
                 <td><%- transactionData[i].type %> </td>
                 <td><%- transactionData[i].category %> </td>
                 <td><%- transactionData[i].mode %> </td>
-                <td><span><%- transactionData[i].amount %></span></td>
+                <td>$<%- transactionData[i].amount.toFixed(2) %></td>
                 <td><%- transactionData[i].comment %> </td>
                 <td> 
                 </td>   
