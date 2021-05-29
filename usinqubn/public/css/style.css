@@ -8,7 +8,7 @@
 
 body {
     background: #E4E6EB;
-    height: 100vh;
+    height: 80%;
     width: 100%;
     overflow: hidden;
 }
@@ -49,6 +49,15 @@ td {
 
 
 /*navbar & sidebar*/
+
+.navhead ul,
+li {
+    display: inline-block;
+}
+
+.navhead a {
+    font-size: 1.5rem;
+}
 
 .navbar {
     display: none;

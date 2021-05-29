@@ -22,8 +22,8 @@ connectDB();
 const app = express();
 
 //Body parser
-app.use(express.urlencoded({ extended: false}))
-app.use(express.json())
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 
 //logging
 if (process.env.NODE_ENV === "development") {
@@ -38,7 +38,6 @@ app.set("layout", "layouts/main");
 //app.use(express.static('public'))
 
 app.set("dashboard", "/dashboard");
-
 //static folder for css, scripts & img
 app.use(express.static(path.join(__dirname, "public")));
 
