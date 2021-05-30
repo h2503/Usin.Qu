@@ -13,12 +13,19 @@ body {
     overflow: hidden;
 }
 
-/*.container{
+#mainBody{
     position: absolute;
-    height: 100%;
+    width: calc(100% - 78px);
+    left: 78px;
+    transition: all 0.5s ease;
+}
+
+.sidebar.active ~ #mainBody{
     width: calc(100% - 240px);
     left: 240px;
-}*/
+}
+
+
 
 p {
     margin: 10px 0 !important;
@@ -29,6 +36,22 @@ p {
 .login-container {
     text-align: center;
 }
+
+/*Dashboard*/
+
+#dashboardChart .dataTables_filter{
+    display: none;
+}
+
+#dashboardChart .dataTables_info{
+    display: none;
+}
+
+#dashboardChart .dataTables_paginate{
+    display: none;
+}
+
+
 
 /*Transactions Section */
 .m-b-15 h1 {
@@ -46,7 +69,11 @@ td {
     text-align: center;
 }
 
+/*history*/
 
+#historyTable {
+    overflow-x: scroll;
+}
 
 /*navbar & sidebar*/
 
@@ -64,6 +91,19 @@ li {
 }
 
 @media (max-width: 768px) {
+    body {
+        overflow-y: scroll;
+    }
+
+    #mainBody{
+        position: absolute;
+        height:calc(80%-132px);
+        width: 100%;
+        top:66;
+        bottom:66;
+    }
+
+
     .fixed-top {
         display: flex;
     }
@@ -76,3 +116,4 @@ li {
         display: none;
     }
 }
+

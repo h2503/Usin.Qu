@@ -5,7 +5,7 @@ div.dataTables_wrapper div.dataTables_length input {
 
 div.dataTables_wrapper div.dataTables_length.d-flex.flex-row label {
     margin-top: 1.2rem;
-    margin-right: 1rem
+    margin-right: 1rem;
 }
 
 div.dataTables_wrapper div.dataTables_length.d-flex.flex-row .select-wrapper.mdb-select span,
@@ -185,6 +185,13 @@ table.dataTable thead .sorting_desc_disabled:after {
     padding-right: 0 !important;
     margin-right: 0 !important;
     width: 100% !important
+}
+
+.dataTables_wrapper td{
+    padding:5px !important;
+}
+.dataTables_wrapper td{
+    padding:5px !important;
 }
 
 

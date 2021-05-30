@@ -1,39 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <%- include ('../partial/head') %>
+    <%- include ('../partial/head') %> <!--THIS IS WHERE THE HTML HEAD GOES-->
   </head>
 
   <body>
-
+    
     <div class="sidebar"><%- include ('../partial/sidebar') %></div>
 
     <div class="navbar fixed-top"><%- include ('../partial/navTop') %></div>
 
     <div class="navbar fixed-bottom"><%- include ('../partial/navBot') %></div>
 
-    <div class="container-fluid w-75" style="padding-top: 2%;"><%- body %></div>
+    <div class="container-fluid" id="mainBody" style="padding-top: 2%;"><%- body %></div> <!--THIS IS WHERE THE DASHBOARD BODY GOES-->
 
     
     <footer>
     <%- include ('../partial/footer') %>
     </footer>
     <!---------------------------------------------------------------------------- JS Scripts Sections ------------------------------------------------------------------------------------->
-  <script>
-  // For Transaction section //
-  $(document).ready(function() {
-      var table = $('#example').DataTable( {
-          lengthChange: false,
-          buttons: [ 'copy', 'excel', 'pdf']
-      } );
-   
-      table.buttons().container()
-          .appendTo( '#example_wrapper .col-md-6:eq(0)' );
-  } );
-  </script>
-
-    <!-- Original JS-->
     <script src="/scripts/navbar.js"></script>
+    <script src="/scripts/transactionHelper.js"></script>
+
 
   </body>
 </html>
