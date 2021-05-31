@@ -90,6 +90,14 @@ li {
     display: none;
 }
 
+footer {
+    font-size: 9px;
+    color: #323437;
+    position: absolute;
+    right:1%;
+    bottom:1%;
+}
+
 @media (max-width: 768px) {
     body {
         overflow-y: scroll;
