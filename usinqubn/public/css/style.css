@@ -33,7 +33,7 @@ p {
 
 
 /* Dark Mode */
-
+/*
 .darkmode--activated p,
 .darkmode--activated li {
     color: #000;
@@ -48,11 +48,45 @@ td,
 form {
     color: #fff;
 }
-
+*/
 .button {
     isolation: isolate;
 }
 
+body.dark-theme {
+    --text-color: #eee;
+    --bkg-color: #121212;
+}
+
+@media (prefers-color-scheme: dark) {
+
+    /* defaults to dark theme */
+    body {
+        --text-color: #eee;
+        --bkg-color: #121212;
+    }
+
+    body.light-theme {
+        --text-color: #222;
+        --bkg-color: #fff;
+    }
+}
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+h1,
+h2,
+h3,
+p,
+tr,
+th,
+td,
+i {
+    color: var(--text-color);
+}
 
 /*login page*/
 
