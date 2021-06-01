@@ -4,7 +4,7 @@
     <div class="row"> 
       <div class="col-md-6">
           <div class="jumbotron">
-            <h3>Linechart</h3>
+            <h3>Line Chart</h3>
             <p> Income vs Expenses </p>
             <canvas id="myChart"></canvas>
           </div>
@@ -12,7 +12,7 @@
       
       <div class="col-md-6">
         <div class="jumbotron">
-          <h3>Piecharts</h3>
+          <h3>Radar Chart</h3>
           <canvas id="myChart2" style="position: relative; height:10vh; width:10vw"></canvas>
         </div>
       </div>
@@ -82,17 +82,25 @@ const config = {
   // Script for creating Radar charts
   const dataRadar = {
   labels: [
-    'Eating',
-    'Drinking',
-    'Sleeping',
-    'Designing',
-    'Coding',
-    'Cycling',
-    'Running'
+    'Automobile',
+    'Bill & Utilities',
+    'Business',
+    'Clothing',
+    'Entertainment',
+    'Food',
+    'Gifts & Donations',
+    'Healthcare',
+    'Investment',
+    'Personal Care',
+    'Salary',
+    'Shopping',
+    'Side Hustle',
+    'Travel',
+    'Others'
   ],
   datasets: [{
-    label: 'My First Dataset',
-    data: [65, 59, 90, 81, 56, 55, 40],
+    label: 'Categories Spending',
+    data: [65, 59, 90, 81, 56, 55, 60, 70, 60, 100, 91, 66, 50, 45, 75],
     fill: true,
     backgroundColor: 'rgba(255, 99, 132, 0.2)',
     borderColor: 'rgb(255, 99, 132)',
@@ -100,17 +108,19 @@ const config = {
     pointBorderColor: '#fff',
     pointHoverBackgroundColor: '#fff',
     pointHoverBorderColor: 'rgb(255, 99, 132)'
-  }, {
-    label: 'My Second Dataset',
-    data: [28, 48, 40, 19, 96, 27, 100],
-    fill: true,
-    backgroundColor: 'rgba(54, 162, 235, 0.2)',
-    borderColor: 'rgb(54, 162, 235)',
-    pointBackgroundColor: 'rgb(54, 162, 235)',
-    pointBorderColor: '#fff',
-    pointHoverBackgroundColor: '#fff',
-    pointHoverBorderColor: 'rgb(54, 162, 235)'
-  }]
+  }
+  // , {
+  //   label: 'My Second Dataset',
+  //   data: [28, 48, 40, 19, 96, 27, 100],
+  //   fill: true,
+  //   backgroundColor: 'rgba(54, 162, 235, 0.2)',
+  //   borderColor: 'rgb(54, 162, 235)',
+  //   pointBackgroundColor: 'rgb(54, 162, 235)',
+  //   pointBorderColor: '#fff',
+  //   pointHoverBackgroundColor: '#fff',
+  //   pointHoverBorderColor: 'rgb(54, 162, 235)'
+  // }
+]
 };
 
 const config2 = {
