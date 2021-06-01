@@ -7,17 +7,17 @@
 }
 
 body {
-    background: #E4E6EB;
-    height: 80%;
     width: 100%;
     overflow: hidden;
 }
 
 #mainBody {
     position: absolute;
+    height: 100%;
     width: calc(100% - 78px);
     left: 78px;
     transition: all 0.5s ease;
+    font-family: 'Arvo', serif !important;
 }
 
 .sidebar.active~#mainBody {
@@ -32,59 +32,33 @@ p {
 }
 
 
-/* Dark Mode */
-/*
-.darkmode--activated p,
-.darkmode--activated li {
-    color: #000;
-}
-
-body.darkmode--activated h1,
-h2,
-h3,
-th,
-tr,
-td,
-form {
-    color: #fff;
-}
-*/
+/* Dark theme */
 .button {
     isolation: isolate;
 }
 
-body.dark-theme {
-    --text-color: #eee;
-    --bkg-color: #121212;
-}
+
+
 
 @media (prefers-color-scheme: dark) {
 
     /* defaults to dark theme */
-    body {
-        --text-color: #eee;
-        --bkg-color: #121212;
+    #mainBody.dark-theme {
+        --text-color: #E4E6EB;
+        --bkg-color: #16171a;
     }
 
-    body.light-theme {
-        --text-color: #222;
-        --bkg-color: #fff;
+    #mainBody.light-theme {
+        --text-color: #1C1E21;
+        --bkg-color: #E4E6EB;
     }
 }
 
-* {
-    font-family: Arial, Helvetica, sans-serif;
+#mainBody {
+    background: var(--bkg-color);
 }
 
-
-h1,
-h2,
-h3,
-p,
-tr,
-th,
-td,
-i {
+#mainBody h1,h2,h3,p,tr,th,td,form{
     color: var(--text-color);
 }
 
