@@ -4,15 +4,16 @@
     <div class="row"> 
       <div class="col-md-6">
           <div class="jumbotron">
-            <h3>Livechart</h3>
+            <h3>Linechart</h3>
             <p> Income vs Expenses </p>
+            <canvas id="myChart"></canvas>
           </div>
         </div>
       
       <div class="col-md-6">
         <div class="jumbotron">
           <h3>Piecharts</h3>
-          <p>(Categories)</p>
+          <canvas id="myChart2" style="position: relative; height:10vh; width:10vw"></canvas>
         </div>
       </div>
     </div> 
@@ -33,7 +34,100 @@
 
 </div>
 
-  
+
+<!-- Script for creating charts -->
+<script>
+// Script for creating Line charts
+  const labels = [
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+];
+const data = {
+  labels: labels,
+  datasets: [{
+    label: 'Income',
+    backgroundColor: 'rgb(255, 99, 132)',
+    borderColor: 'rgb(255, 99, 132)',
+    showLine: true,
+    data: [0, 10, 5, 2, 20, 30, 45],
+  },
+  {label: 'Expenses',
+    backgroundColor: 'rgb(199, 15, 227)',
+    borderColor: 'rgb(199, 15, 227)',
+    showLine: true,
+    data: [10, 20, 30, 5, 15, 23, 55],
+  }],
+};
+
+const config = {
+  type: 'line',
+  data,
+  options: {}
+};
 
 
+  // === include 'setup' then 'config' above ===
+
+  let myChart = new Chart(
+    document.getElementById('myChart'),
+    config
+  );
+  // Closing script for creating Line charts
+
+
+  // Script for creating Radar charts
+  const dataRadar = {
+  labels: [
+    'Eating',
+    'Drinking',
+    'Sleeping',
+    'Designing',
+    'Coding',
+    'Cycling',
+    'Running'
+  ],
+  datasets: [{
+    label: 'My First Dataset',
+    data: [65, 59, 90, 81, 56, 55, 40],
+    fill: true,
+    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+    borderColor: 'rgb(255, 99, 132)',
+    pointBackgroundColor: 'rgb(255, 99, 132)',
+    pointBorderColor: '#fff',
+    pointHoverBackgroundColor: '#fff',
+    pointHoverBorderColor: 'rgb(255, 99, 132)'
+  }, {
+    label: 'My Second Dataset',
+    data: [28, 48, 40, 19, 96, 27, 100],
+    fill: true,
+    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+    borderColor: 'rgb(54, 162, 235)',
+    pointBackgroundColor: 'rgb(54, 162, 235)',
+    pointBorderColor: '#fff',
+    pointHoverBackgroundColor: '#fff',
+    pointHoverBorderColor: 'rgb(54, 162, 235)'
+  }]
+};
+
+const config2 = {
+  type: 'radar',
+  data: dataRadar,
+  options: {
+    elements: {
+      line: {
+        borderWidth: 3
+      }
+    }
+  },
+};
+let myChart2 = new Chart(
+    document.getElementById('myChart2'),
+    config2
+  );
+  // Closing script for creating Radar charts
   
+</script>
