@@ -1,31 +1,29 @@
 <div class="row">
-
-    <div class="col-md-4">
-        <h2>Total Income</h2>
-        <% var totalIncome = 0; %> 
-        <% for( let i = 0; i < transactionData.length; i++ ) { %>
-            <% if (transactionData[i].type === 'Income') { %>
-                <% totalIncome += transactionData[i].amount; %>
-            <% } %>
-        <% } %>
-        <p>$<%= totalIncome.toFixed(2) %></p>         
+  <div class="col-md-4">
+    <div class="jumbotron">
+      <h2>Total Income</h2>
+      <% var totalIncome = 0; %> <% for( let i = 0; i < transactionData.length;
+      i++ ) { %> <% if (transactionData[i].type === 'Income') { %> <%
+      totalIncome += transactionData[i].amount; %> <% } %> <% } %>
+      <p>$<%= totalIncome.toFixed(2) %></p>
     </div>
-    
-    <div class="col-md-4">
-        <h2>Total Expenses</h2>
-        <% var totalExpense = 0; %> 
-        <% for( let i = 0; i < transactionData.length; i++ ) { %>
-            <% if (transactionData[i].type === 'Expense') { %>
-                <% totalExpense += transactionData[i].amount; %>
-            <% } %>
-        <% } %>
-        <p>$<%= totalExpense.toFixed(2) %></p>
-    </div>
+  </div>
 
-    <div class="col-md-4">
-        <h2>Balance</h2>
-        <% var totalBalance = totalIncome-totalExpense %>
-        <p>$<%= totalBalance.toFixed(2) %> </p> 
+  <div class="col-md-4">
+    <div class="jumbotron">
+      <h2>Total Expenses</h2>
+      <% var totalExpense = 0; %> <% for( let i = 0; i < transactionData.length;
+      i++ ) { %> <% if (transactionData[i].type === 'Expense') { %> <%
+      totalExpense += transactionData[i].amount; %> <% } %> <% } %>
+      <p>$<%= totalExpense.toFixed(2) %></p>
     </div>
+  </div>
 
+  <div class="col-md-4">
+    <div class="jumbotron">
+      <h2>Balance</h2>
+      <% var totalBalance = totalIncome-totalExpense %>
+      <p>$<%= totalBalance.toFixed(2) %></p>
+    </div>
+  </div>
 </div>

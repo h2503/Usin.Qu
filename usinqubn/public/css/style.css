@@ -31,14 +31,22 @@ p {
     margin: 10px 0 !important;
 }
 
+.jumbotron {
+    border-radius: 5px;
+    background-color: #323437;
+}
+
+/* Line and Radar Chart*/
+.jumbotron #myChart2 {
+    height: 40vh !important;
+    width: 75% !important;
+
+}
 
 /* Dark theme */
 .button {
     isolation: isolate;
 }
-
-
-
 
 @media (prefers-color-scheme: dark) {
 
@@ -52,13 +60,21 @@ p {
         --text-color: #1C1E21;
         --bkg-color: #E4E6EB;
     }
+
 }
 
 #mainBody {
     background: var(--bkg-color);
 }
 
-#mainBody h1,h2,h3,p,tr,th,td,form{
+h1,
+h2,
+h3,
+p,
+tr,
+th,
+td,
+form {
     color: var(--text-color);
 }
 
@@ -106,6 +122,114 @@ td {
     overflow-x: scroll;
 }
 
+/* To- do List */
+
+.todoListContainer button {
+    outline: none;
+    cursor: pointer;
+}
+
+.todoListContainer {
+    width: auto;
+    background-color: white;
+    padding: 10px;
+    border-radius: 3px;
+    margin: auto;
+    text-align: center;
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+
+#todoList {
+    text-align: left;
+    list-style-type: none;
+    margin: 0;
+    margin-top: 60px;
+    float: none;
+    padding: 0;
+    width: 100%;
+}
+
+@keyframes fadein {
+    from {
+        background-color: #ffffab;
+    }
+
+    to {
+        background-color: white;
+    }
+}
+
+#todoList li {
+    border: 0px;
+    border-bottom: 1px solid #f3f3f3;
+    padding: 10px;
+    margin: 5px auto;
+    clear: both;
+    transition: all 1.3s ease-in-out;
+    animation: fadein 1.3s ease-in-out;
+}
+
+#todoList li p {
+    display: inline-block;
+    margin: 0;
+    text-overflow: ellipsis !important;
+    overflow: hidden;
+    width: 75%;
+    transition: all 0.3s ease;
+}
+
+#todoList li button {
+    float: right;
+    margin: -5px 5px;
+    border-radius: 100%;
+    border: 0px solid transparent;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+}
+
+#newTodo {
+    padding: 10px;
+    border-radius: 3px 0 0 3px;
+    border: 0px;
+    border-bottom: 1px solid #cecece;
+    width: 230px;
+    float: left;
+    outline: none;
+}
+
+#addTodo {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    float: right;
+    border: 0px;
+    background-color: #fc616d;
+    cursor: pointer;
+}
+
+#addTodo .fa {
+    color: white;
+}
+
+.lineThrough {
+    text-decoration-line: line-through;
+    color: lightgrey;
+}
+
+.doneTodo {
+    background-color: #00d7a1;
+    color: white;
+}
+
+.removeTodo {
+    background-color: #f43449;
+    color: white;
+}
+
+.doneTodoGrey {
+    background-color: grey;
+}
 
 /*navbar & sidebar*/
 

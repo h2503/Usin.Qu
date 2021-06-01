@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <%- include ('../partial/head') %> <!--THIS IS WHERE THE HTML HEAD GOES-->
+    <%- include ('../partial/head') %>
+    <!--THIS IS WHERE THE HTML HEAD GOES-->
   </head>
 
   <body>
-    
     <div class="sidebar"><%- include ('../partial/sidebar') %></div>
 
     <div class="navbar fixed-top"><%- include ('../partial/navTop') %></div>
 
     <div class="navbar fixed-bottom"><%- include ('../partial/navBot') %></div>
 
-    <div class="container-fluid" id="mainBody" style="padding-top: 2%;"><%- body %></div> <!--THIS IS WHERE THE DASHBOARD BODY GOES-->
+    <div class="container-fluid" id="mainBody" style="padding-top: 2%">
+      <%- body %>
+    </div>
+    <!--THIS IS WHERE THE DASHBOARD BODY GOES-->
 
-    
     <footer><%- include ('../partial/footer') %></footer>
-    
-    
+
     <!---------------------------------------------------------------------------- JS Scripts Sections ------------------------------------------------------------------------------------->
     <!--
     <script>
@@ -27,11 +28,9 @@
       window.addEventListener('load', addDarkmodeWidget);
     </script>
   -->
-  
+    <script src="/scripts/notes.js"></script>
     <script src="/scripts/dark_theme.js"></script>
     <script src="/scripts/navbar.js"></script>
     <script src="/scripts/transactionHelper.js"></script>
-
-
   </body>
 </html>

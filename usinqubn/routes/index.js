@@ -19,17 +19,17 @@ router.get("/", ensureGuest, (req, res) => {
 //@route GET /dashboard
 router.get("/dashboard", ensureAuth, async (req, res) => {
   try {
-    const transactionData = await Data.find({ user: req.user.id })//pass in transaction data according to the logged in user
-                                      .lean()
-                                      .sort({date: -1,}) //sort by date                                                                     
+    const transactionData = await Data.find({ user: req.user.id }) //pass in transaction data according to the logged in user
+      .lean()
+      .sort({ date: -1 }); //sort by date
 
-      res.render("dashboard", {  //callbacks
+    res.render("dashboard", {
+      //callbacks
       title: "Dashboard",
       name: req.user.displayName,
       dp: req.user.image,
       transactionData,
-      moment: moment,  
-      
+      moment: moment,
     });
   } catch (err) {
     console.error(err);
@@ -64,9 +64,9 @@ router.post("/", ensureAuth, async (req, res) => {
 //@routes GET /history
 router.get("/history", ensureAuth, async (req, res) => {
   try {
-    const transactionData = await Data.find({ user: req.user.id })//pass in transaction data according to the logged in user
-                                      .lean()
-                                      .sort({date: -1}); //sort by date                              
+    const transactionData = await Data.find({ user: req.user.id }) //pass in transaction data according to the logged in user
+      .lean()
+      .sort({ date: -1 }); //sort by date
     res.render("history", {
       title: "History",
       name: req.user.displayName,
@@ -79,7 +79,6 @@ router.get("/history", ensureAuth, async (req, res) => {
     res.render("errors/500");
   }
 });
-
 
 //@desc Financial-advices
 //@routes GET /financial-advices
@@ -125,6 +124,8 @@ router.get("/monthly", ensureAuth, (req, res) => {
     dp: req.user.image,
   });
 });
+
+// Maybe for the todo list (still not connected to user, only save at local storage even with different users)
 
 //404
 router.get("/404", (req, res) => {
