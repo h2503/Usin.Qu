@@ -1,0 +1,45 @@
+<div class="jumbotron">
+    <h5>Line Chart</h5>
+    <p>Income vs Expenses</p>
+    <canvas id="myChart"></canvas>
+</div>
+
+
+
+
+<script>
+
+    // Script for creating Line charts
+    const labels = ["January", "February", "March", "April", "May", "June"];
+    const data = {
+      labels: labels,
+      datasets: [
+        {
+          label: "Income",
+          backgroundColor: "rgb(255, 99, 132)",
+          borderColor: "rgb(255, 99, 132)",
+          showLine: true,
+          data: [0, 10, 5, 2, 20, 30, 45],
+        },
+        {
+          label: "Expenses",
+          backgroundColor: "rgb(199, 15, 227)",
+          borderColor: "rgb(199, 15, 227)",
+          showLine: true,
+          data: [10, 20, 30, 5, 15, 23, 55],
+        },
+      ],
+    };
+  
+    const config = {
+      type: "line",
+      data,
+      options: {},
+    };
+  
+    // === include 'setup' then 'config' above ===
+  
+    
+    let myChart = new Chart(document.getElementById("myChart"), config);
+    // Closing script for creating Line charts
+  </script>

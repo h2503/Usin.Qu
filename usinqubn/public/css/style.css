@@ -8,7 +8,7 @@
 
 body {
     width: 100%;
-    overflow: hidden;
+    
 }
 
 #mainBody {
@@ -25,12 +25,11 @@ body {
     left: 240px;
 }
 
-
-
 p {
     margin: 10px 0 !important;
 }
 
+<<<<<<< Updated upstream
 .jumbotron {
     border-radius: 5px;
     background-color: #323437;
@@ -83,46 +82,66 @@ p {
 }
 
 
+=======
+>>>>>>> Stashed changes
 /* Line and Radar Chart*/
-.jumbotron #myChart2 {
-    height: 40vh !important;
-    width: 75% !important;
+#myChart2 {
+    margin:auto;
+}
 
+#myChart2 {
+    width: 100%;
+    height:auto;
+    margin:auto;
 }
 
 /* Dark theme */
-.button {
-    isolation: isolate;
-}
-
 @media (prefers-color-scheme: dark) {
 
     /* defaults to dark theme */
-    #mainBody.dark-theme {
+    body.dark-theme {
         --text-color: #E4E6EB;
-        --bkg-color: #16171a;
+        --bkg-color1: #16171a;
+        --bkg-color2: #323437;
+
     }
 
-    #mainBody.light-theme {
+    body.light-theme {
         --text-color: #1C1E21;
-        --bkg-color: #E4E6EB;
+        --bkg-color1: #E4E6EB;
+        --bkg-color2: #fff;
     }
 
 }
 
-#mainBody {
-    background: var(--bkg-color);
+body {
+    background: var(--bkg-color1);
+}
+
+.jumbotron{
+    background: var(--bkg-color2);
+    border-radius: 5px;
+    padding:10px;
+    text-align: center;
 }
 
 h1,
 h2,
 h3,
+h4,
+h5,
 p,
 tr,
 th,
 td,
-form {
+form,
+label,
+#example_info {
     color: var(--text-color);
+}
+
+.button {
+    isolation: isolate;
 }
 
 /*login page*/
@@ -130,22 +149,6 @@ form {
 .login-container {
     text-align: center;
 }
-
-/*Dashboard*/
-
-#dashboardChart .dataTables_filter {
-    display: none;
-}
-
-#dashboardChart .dataTables_info {
-    display: none;
-}
-
-#dashboardChart .dataTables_paginate {
-    display: none;
-}
-
-
 
 /*Transactions Section */
 .m-b-15 h1 {
@@ -163,10 +166,26 @@ td {
     text-align: center;
 }
 
-/*history*/
+/*tables*/
 
-#historyTable {
+#transactionHistory {
     overflow-x: scroll;
+}
+
+#latestTransaction {
+    overflow-x: scroll;
+}
+
+#latestTransaction .dataTables_filter {
+    display: none;
+}
+
+#latestTransaction .dataTables_info {
+    display: none;
+}
+
+#latestTransaction .dataTables_paginate {
+    display: none;
 }
 
 /* To- do List */
@@ -194,6 +213,11 @@ td {
     float: none;
     padding: 0;
     width: 100%;
+}
+
+.todotext{
+    isolation: isolate;
+    color: #000;
 }
 
 @keyframes fadein {
@@ -307,11 +331,11 @@ footer {
     }
 
     #mainBody {
-        position: absolute;
         height: calc(80%-132px);
         width: 100%;
-        top: 66;
-        bottom: 66;
+        left: unset;
+        top: 66px;
+        bottom: 70px;
     }
 
 
@@ -326,4 +350,9 @@ footer {
     .sidebar {
         display: none;
     }
+    
+    footer {
+        display:none;
+    }
+    
 }

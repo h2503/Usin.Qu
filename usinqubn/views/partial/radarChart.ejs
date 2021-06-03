@@ -1,0 +1,321 @@
+<div class="jumbotron">
+    <h5>Radar Chart</h5>
+    <canvas id="myChart2"></canvas>
+</div>
+
+
+
+
+
+<script>
+// parse transaction data into script
+var transData = JSON.parse('<%- transData %>')
+//console.log(transData)
+
+// consolidating Expenses category
+var totAutomobile = 0;
+for( let i = 0; i<transData.length; i++){
+    if (transData[i].category === 'Automobile' && transData[i].type === 'Expense'){
+      totAutomobile += transData[i].amount;
+    }
+}
+
+var totBillUtil = 0;
+for( let i = 0; i<transData.length; i++){
+    if (transData[i].category === 'Bill & Utilities' && transData[i].type === 'Expense'){
+      totBillUtil += transData[i].amount;
+    }
+}
+
+var totBusiness = 0;
+for( let i = 0; i<transData.length; i++){
+    if (transData[i].category === 'Business' && transData[i].type === 'Expense'){
+      totBusiness += transData[i].amount;
+    }
+}
+
+var totClothing = 0;
+for( let i = 0; i<transData.length; i++){
+    if (transData[i].category === 'Clothing' && transData[i].type === 'Expense'){
+      totClothing += transData[i].amount;
+    }
+}
+
+var totEntertainment = 0;
+for( let i = 0; i<transData.length; i++){
+    if (transData[i].category === 'Entertainment' && transData[i].type === 'Expense'){
+      totEntertainment += transData[i].amount;
+    }
+}
+
+var totFood = 0;
+for( let i = 0; i<transData.length; i++){
+    if (transData[i].category === 'Food' && transData[i].type === 'Expense'){
+      totFood += transData[i].amount;
+    }
+}
+
+var totGiftDonate = 0;
+for( let i = 0; i<transData.length; i++){
+    if (transData[i].category === 'Gifts & Donations' && transData[i].type === 'Expense'){
+      totGiftDonate += transData[i].amount;
+    }
+}
+
+var totHealthcare = 0;
+for( let i = 0; i<transData.length; i++){
+    if (transData[i].category === 'Healthcare' && transData[i].type === 'Expense'){
+      totHealthcare += transData[i].amount;
+    }
+}
+
+var totInvestment = 0;
+for( let i = 0; i<transData.length; i++){
+    if (transData[i].category === 'Investment' && transData[i].type === 'Expense'){
+      totInvestment += transData[i].amount;
+    }
+}
+
+var totPersonalCare = 0;
+for( let i = 0; i<transData.length; i++){
+    if (transData[i].category === 'Personal Care' && transData[i].type === 'Expense'){
+      totPersonalCare += transData[i].amount;
+    }
+}
+
+var totSalary = 0;
+for( let i = 0; i<transData.length; i++){
+    if (transData[i].category === 'Salary' && transData[i].type === 'Expense'){
+      totSalary += transData[i].amount;
+    }
+}
+
+var totShopping = 0;
+for( let i = 0; i<transData.length; i++){
+    if (transData[i].category === 'Shopping' && transData[i].type === 'Expense'){
+      totShopping += transData[i].amount;
+    }
+}
+
+var totSideHustle = 0;
+for( let i = 0; i<transData.length; i++){
+    if (transData[i].category === 'Side Hustle' && transData[i].type === 'Expense'){
+      totSideHustle += transData[i].amount;
+    }
+}
+
+var totTravel = 0;
+for( let i = 0; i<transData.length; i++){
+    if (transData[i].category === 'Travel' && transData[i].type === 'Expense'){
+      totTravel += transData[i].amount;
+    }
+}
+
+var totOthers = 0;
+for( let i = 0; i<transData.length; i++){
+    if (transData[i].category === 'Others' && transData[i].type === 'Expense'){
+      totOthers += transData[i].amount;
+    }
+}
+
+//consolidating Income Category
+var totAutomobile_Inc = 0;
+for( let i = 0; i<transData.length; i++){
+    if (transData[i].category === 'Automobile' && transData[i].type === 'Income'){
+      totAutomobile_Inc += transData[i].amount;
+    }
+}
+
+var totBillUtil_Inc = 0;
+for( let i = 0; i<transData.length; i++){
+    if (transData[i].category === 'Bill & Utilities' && transData[i].type === 'Income'){
+      totBillUtil_Inc += transData[i].amount;
+    }
+}
+
+var totBusiness_Inc = 0;
+for( let i = 0; i<transData.length; i++){
+    if (transData[i].category === 'Business' && transData[i].type === 'Income'){
+      totBusiness_Inc += transData[i].amount;
+    }
+}
+
+var totClothing_Inc = 0;
+for( let i = 0; i<transData.length; i++){
+    if (transData[i].category === 'Clothing' && transData[i].type === 'Income'){
+      totClothing_Inc += transData[i].amount;
+    }
+}
+
+var totEntertainment_Inc = 0;
+for( let i = 0; i<transData.length; i++){
+    if (transData[i].category === 'Entertainment' && transData[i].type === 'Income'){
+      totEntertainment_Inc += transData[i].amount;
+    }
+}
+
+var totFood_Inc = 0;
+for( let i = 0; i<transData.length; i++){
+    if (transData[i].category === 'Food' && transData[i].type === 'Income'){
+      totFood_Inc += transData[i].amount;
+    }
+}
+
+var totGiftDonate_Inc = 0;
+for( let i = 0; i<transData.length; i++){
+    if (transData[i].category === 'Gifts & Donations' && transData[i].type === 'Income'){
+      totGiftDonate_Inc += transData[i].amount;
+    }
+}
+
+var totHealthcare_Inc = 0;
+for( let i = 0; i<transData.length; i++){
+    if (transData[i].category === 'Healthcare' && transData[i].type === 'Income'){
+      totHealthcare_Inc += transData[i].amount;
+    }
+}
+
+var totInvestment_Inc = 0;
+for( let i = 0; i<transData.length; i++){
+    if (transData[i].category === 'Investment' && transData[i].type === 'Income'){
+      totInvestment_Inc += transData[i].amount;
+    }
+}
+
+var totPersonalCare_Inc = 0;
+for( let i = 0; i<transData.length; i++){
+    if (transData[i].category === 'Personal Care' && transData[i].type === 'Income'){
+      totPersonalCare_Inc += transData[i].amount;
+    }
+}
+
+var totSalary_Inc = 0;
+for( let i = 0; i<transData.length; i++){
+    if (transData[i].category === 'Salary' && transData[i].type === 'Income'){
+      totSalary_Inc += transData[i].amount;
+    }
+}
+
+var totShopping_Inc = 0;
+for( let i = 0; i<transData.length; i++){
+    if (transData[i].category === 'Shopping' && transData[i].type === 'Income'){
+      totShopping_Inc += transData[i].amount;
+    }
+}
+
+var totSideHustle_Inc = 0;
+for( let i = 0; i<transData.length; i++){
+    if (transData[i].category === 'Side Hustle' && transData[i].type === 'Income'){
+      totSideHustle_Inc += transData[i].amount;
+    }
+}
+
+var totTravel_Inc = 0;
+for( let i = 0; i<transData.length; i++){
+    if (transData[i].category === 'Travel' && transData[i].type === 'Income'){
+      totTravel_Inc += transData[i].amount;
+    }
+}
+
+var totOthers_Inc = 0;
+for( let i = 0; i<transData.length; i++){
+    if (transData[i].category === 'Others' && transData[i].type === 'Income'){
+      totOthers_Inc += transData[i].amount;
+    }
+}
+
+
+
+// Script for creating Radar charts
+
+  const dataRadar = {
+    labels: [
+      "Automobile",
+      "Bill & Utilities",
+      "Business",
+      "Clothing",
+      "Entertainment",
+      "Food",
+      "Gifts & Donations",
+      "Healthcare",
+      "Investment",
+      "Personal Care",
+      "Salary",
+      "Shopping",
+      "Side Hustle",
+      "Travel",
+      "Others",
+    ],
+    datasets: [
+      {
+        label: "Expenses",
+        data: [
+          totAutomobile, 
+          totBillUtil, 
+          totBusiness, 
+          totClothing, 
+          totEntertainment, 
+          totFood,
+          totGiftDonate,
+          totHealthcare,
+          totInvestment,
+          totPersonalCare,
+          totSalary,
+          totShopping,
+          totSideHustle,
+          totTravel,
+          totOthers
+        ],
+        fill: true,
+        backgroundColor: "rgba(255, 99, 132, 0.2)",
+        borderColor: "rgb(255, 99, 132)",
+        pointBackgroundColor: "rgb(255, 99, 132)",
+        pointBorderColor: "#fff",
+        pointHoverBackgroundColor: "#fff",
+        pointHoverBorderColor: "rgb(255, 99, 132)",
+      }
+      , {
+        label: "Income",
+        data: [
+          totAutomobile_Inc, 
+          totBillUtil_Inc, 
+          totBusiness_Inc, 
+          totClothing_Inc, 
+          totEntertainment_Inc, 
+          totFood_Inc,
+          totGiftDonate_Inc,
+          totHealthcare_Inc,
+          totInvestment_Inc,
+          totPersonalCare_Inc,
+          totSalary_Inc,
+          totShopping_Inc,
+          totSideHustle_Inc,
+          totTravel_Inc,
+          totOthers_Inc
+        ],
+        fill: true,
+        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+        borderColor: 'rgb(54, 162, 235)',
+        pointBackgroundColor: 'rgb(54, 162, 235)',
+        pointBorderColor: '#fff',
+        pointHoverBackgroundColor: '#fff',
+        pointHoverBorderColor: 'rgb(54, 162, 235)'
+       }
+    ],
+  };
+
+  const config2 = {
+    type: "radar",
+    data: dataRadar,
+    options: {
+      elements: {
+        line: {
+          borderWidth: 3,
+        },
+      },
+    },
+  };
+  let myChart2 = new Chart(document.getElementById("myChart2"), config2);
+  // Closing script for creating Radar charts
+
+</script>

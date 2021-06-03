@@ -1,7 +1,7 @@
 
-<div id="dashboardChart">
+<div id="latestTransaction">
   <div class="m-b-15">
-    <h3>Latest Transaction</h3>
+    <h5>Latest Transaction</h5>
   </div>
     
   <table id="example" class="table table-striped table-bordered" style="width:100%">
@@ -34,9 +34,12 @@
         <% } %>
 
           <td><%- transactionData[i].comment %> </td>
-          <td><a href="/editTransaction" class="text-decoration-none"><i class="fas fa-edit"></i></a>
-              &nbsp;
+          <td id="updateDelete">
+            <a href="edit_transaction/<%- transactionData[i]._id %>" class="text-decoration-none"><i class="fas fa-edit"></i></a>
+            <form action="<%- transactionData[i]._id %>" method="post" id="delete-form">
+              <input type="hidden" name="_method" value="delete">
               <a href="javascript:void(0)" id="delete-id" class="text-decoration-none"><i class="fas fa-trash-alt"></i></a>
+            </form>
           </td>   
         </tr>
       <% } %>  

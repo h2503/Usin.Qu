@@ -21,15 +21,16 @@ router.get("/dashboard", ensureAuth, async (req, res) => {
   try {
     const transactionData = await Data.find({ user: req.user.id }) //pass in transaction data according to the logged in user
       .lean()
-      .sort({ date: -1 }); //sort by date
+      .sort({ createdAt: -1 }); //sort by createdAt timestamp
 
     res.render("dashboard", {
       //callbacks
       title: "Dashboard",
-      name: req.user.displayName,
+      name: req.user.displayName, 
       dp: req.user.image,
-      transactionData,
-      moment: moment,
+      transactionData, //send transaction data to EJS
+      transData : JSON.stringify(transactionData), //JSON stringify and parse transaction data to Script
+      moment: moment, //export moment to ejs
     });
   } catch (err) {
     console.error(err);
@@ -79,6 +80,36 @@ router.get("/history", ensureAuth, async (req, res) => {
     res.render("errors/500");
   }
 });
+
+//@desc Show Edit Page
+//@routes Get/edit_Transaction/:id
+  router.get ('/edit_transaction/:id', ensureAuth, async (req, res) => {
+    try {
+    const transaction = await Data.findOne({ _id: req.params.id }).lean()
+      res.render('edit_transaction', {
+        title: "Edit Transaction",
+        name: req.user.displayName,
+        dp: req.user.image,
+        transaction, 
+      });
+    } catch (err) {
+      console.error(err);
+      res.render("errors/500");
+    }
+  })
+
+// @desc Update transaction
+// @route PUT /transaction/:id
+router.put("/:id", ensureAuth, async (req, res) => {
+  let transaction = await Data.findById(req.params.id).lean()
+    transaction = await Data.findOneAndUpdate({ _id: req.params.id }, req.body, {
+      new: true,
+      runValidators: true
+    })
+
+    res.redirect('/dashboard')
+});
+
 
 //@desc Financial-advices
 //@routes GET /financial-advices

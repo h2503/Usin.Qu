@@ -1,13 +1,13 @@
 const mongoose = require('mongoose')
 
-const DataSchema = new mongoose.Schema({
+const DataSchema = new mongoose.Schema( {
     user: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
     },
     date: {
         type: Date,
-        default: Date.now
+        default: Date.now,
     },
     type: {
         type: String,
@@ -31,7 +31,8 @@ const DataSchema = new mongoose.Schema({
     },
     comment: {
         type: String,
-    }
-})
+    },
+
+}, {timestamps:true})
 
 module.exports = mongoose.model('Data', DataSchema)

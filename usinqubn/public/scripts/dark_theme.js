@@ -19,24 +19,24 @@ darkmode.showWidget();
 
 const btnDark = document.querySelector(".btn-dark");
 const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
-const mainBody = document.getElementById("mainBody");
+const body = document.querySelector("body");
 
 const currentTheme = localStorage.getItem("theme");  //get session theme from local storage
 if (currentTheme == "dark") {
-  mainBody.classList.toggle("dark-theme");
+  body.classList.toggle("dark-theme");
 } else if (currentTheme == "light") {
-  mainBody.classList.toggle("light-theme");
+  body.classList.toggle("light-theme");
 }
 
 btnDark.addEventListener("click", function () {
   if (prefersDarkScheme.matches) {
-    mainBody.classList.toggle("light-theme");
-    var theme = mainBody.classList.contains("light-theme")
+    body.classList.toggle("light-theme");
+    var theme = body.classList.contains("light-theme")
       ? "light"
       : "dark";
   } else {
-    mainBody.classList.toggle("dark-theme");
-    var theme = mainBody.classList.contains("dark-theme")
+    body.classList.toggle("dark-theme");
+    var theme = body.classList.contains("dark-theme")
       ? "dark"
       : "light";
   }
