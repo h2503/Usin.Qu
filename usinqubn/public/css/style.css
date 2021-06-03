@@ -35,6 +35,19 @@ p {
     padding: 20px;
 }
 
+/* button */
+#updateDelete {
+    margin: auto;
+}
+
+#updateDelete .text-decoration-none{
+    float: left;
+    width:50%;
+    padding-top: 6px;
+    margin: auto;
+}
+
+
 /* Login Page */
 .card {
     position: relative;
@@ -82,10 +95,6 @@ p {
 
 
 /* Line and Radar Chart*/
-#myChart2 {
-    margin:auto;
-}
-
 #myChart2 {
     width: 100%;
     height:auto;

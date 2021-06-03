@@ -34,13 +34,15 @@
         <% } %>
 
           <td><%- transactionData[i].comment %> </td>
+
           <td id="updateDelete">
             <a href="edit_transaction/<%- transactionData[i]._id %>" class="text-decoration-none"><i class="fas fa-edit"></i></a>
-            <form action="<%- transactionData[i]._id %>" method="post" id="delete-form">
+            <form action="/<%- transactionData[i]._id %>" method="post" id="delete-form">
               <input type="hidden" name="_method" value="delete">
-              <a href="javascript:void(0)" id="delete-id" class="text-decoration-none"><i class="fas fa-trash-alt"></i></a>
+              <button type="submit" class="btn"><i class="fas fa-trash-alt"></i></button>
             </form>
           </td>   
+
         </tr>
       <% } %>  
       

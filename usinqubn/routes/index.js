@@ -101,14 +101,33 @@ router.get("/history", ensureAuth, async (req, res) => {
 // @desc Update transaction
 // @route PUT /transaction/:id
 router.put("/:id", ensureAuth, async (req, res) => {
-  let transaction = await Data.findById(req.params.id).lean()
+  try {
+    let transaction = await Data.findById(req.params.id).lean()
     transaction = await Data.findOneAndUpdate({ _id: req.params.id }, req.body, {
       new: true,
       runValidators: true
     })
-
     res.redirect('/dashboard')
+  } catch (error) {
+    console.error(err)
+    return res.render('errors/500')
+  }
+  
 });
+
+// @desc Delete transaction
+// @route DELETE /transaction/:id
+router.delete("/:id", ensureAuth, async (req, res) => {
+  try {
+    await Data.remove({ _id: req.params.id })
+    res.redirect('/history')
+  } catch (err) {
+    console.error(err)
+    return res.render('errors/500')
+  }
+});
+
+
 
 
 //@desc Financial-advices
