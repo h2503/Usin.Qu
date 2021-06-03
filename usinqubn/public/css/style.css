@@ -34,7 +34,54 @@ p {
 .jumbotron {
     border-radius: 5px;
     background-color: #323437;
+    padding: 20px;
 }
+
+/* Login Page */
+.card {
+    position: relative;
+    border: none;
+}
+
+.card1 {
+    width: 45%;
+    background-color: #3234374b;
+    border: 2px solid #000;
+}
+
+.card2 {
+    width: 55%;
+    height: 700px;
+    border: 2px solid #000;
+    background-color: #E8EAF6;
+}
+
+#image {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+}
+
+
+/** Log in page Media Queries*/
+
+@media screen and (max-width: 1000px) {
+
+    .card {
+        padding: 0;
+        margin: 0;
+    }
+
+    .card1 {
+        width: 80%;
+    }
+
+    .card2 {
+        width: 80%;
+        height: 50vh;
+    }
+}
+
 
 /* Line and Radar Chart*/
 .jumbotron #myChart2 {

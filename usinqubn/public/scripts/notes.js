@@ -1,8 +1,8 @@
 var listItemID = 1;
-$("#addTodo").on("click", function() {
+$("#addTodo").on("click", function () {
   var newTodo = $("#newTodo").val();
   if (newTodo === "") {
-    alert("Please add to do item");
+    alert("List of things I want to buy");
   } else {
     $("#todoList").append(
       '<li id="li' +
@@ -21,9 +21,7 @@ $("#addTodo").on("click", function() {
     listItemID++;
 
     //clear input after adding todo
-    $("#newTodo")
-      .val("")
-      .focus();
+    $("#newTodo").val("").focus();
   }
   //save todos to local storage
   var todos = $("#todoList").html();
@@ -37,7 +35,7 @@ if (localStorage.getItem("todos")) {
 }
 
 //remove todo
-$(document).on("click", ".removeTodo", function() {
+$(document).on("click", ".removeTodo", function () {
   var checkstr = confirm("Are you sure you want to delete this?");
   if (checkstr == true) {
     var removeItemId = "#" + $(this).attr("data-id");
@@ -51,7 +49,7 @@ $(document).on("click", ".removeTodo", function() {
   return false;
 });
 //todo complete
-$(document).on("click", ".doneTodo", function() {
+$(document).on("click", ".doneTodo", function () {
   var completeItemId = "#" + $(this).attr("data-id") + " .todotext";
   $(completeItemId).toggleClass("lineThrough");
   $(this).toggleClass("doneTodoGrey");
