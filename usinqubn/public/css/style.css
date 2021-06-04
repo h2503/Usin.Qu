@@ -95,8 +95,14 @@ p {
 
 
 /* Line and Radar Chart*/
+#myChart {
+    width: 90%;
+    height:auto;
+    margin:auto;
+}
+
 #myChart2 {
-    width: 100%;
+    width: 80%;
     height:auto;
     margin:auto;
 }
@@ -142,7 +148,8 @@ th,
 td,
 form,
 label,
-#example_info {
+#example_info,
+#example i {
     color: var(--text-color);
 }
 

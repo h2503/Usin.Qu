@@ -1,35 +1,216 @@
 <div class="jumbotron">
-    <h5>Doughnut Chart</h5>
-    <p>Income vs Expenses</p>
+    <h5>Expense Categories</h5>
     <canvas id="myChart"></canvas>
 </div>
 
 <script>
-    // Script for creating Line charts
-    const data = {
-      labels: [
-        'Income',
-        'Expenses'
+// parse transaction data into script
+var transData = JSON.parse('<%- transData %>')
+//console.log(transData)
+
+// consolidating Expenses category
+var totAutomobile = 0;
+for( let i = 0; i<transData.length; i++){
+    if (transData[i].category === 'Automobile' && transData[i].type === 'Expense'){
+      totAutomobile += transData[i].amount;
+    }
+}
+
+var totBillUtil = 0;
+for( let i = 0; i<transData.length; i++){
+    if (transData[i].category === 'Bill & Utilities' && transData[i].type === 'Expense'){
+      totBillUtil += transData[i].amount;
+    }
+}
+
+var totBusiness = 0;
+for( let i = 0; i<transData.length; i++){
+    if (transData[i].category === 'Business' && transData[i].type === 'Expense'){
+      totBusiness += transData[i].amount;
+    }
+}
+
+var totClothing = 0;
+for( let i = 0; i<transData.length; i++){
+    if (transData[i].category === 'Clothing' && transData[i].type === 'Expense'){
+      totClothing += transData[i].amount;
+    }
+}
+
+var totEntertainment = 0;
+for( let i = 0; i<transData.length; i++){
+    if (transData[i].category === 'Entertainment' && transData[i].type === 'Expense'){
+      totEntertainment += transData[i].amount;
+    }
+}
+
+var totFood = 0;
+for( let i = 0; i<transData.length; i++){
+    if (transData[i].category === 'Food' && transData[i].type === 'Expense'){
+      totFood += transData[i].amount;
+    }
+}
+
+var totGiftDonate = 0;
+for( let i = 0; i<transData.length; i++){
+    if (transData[i].category === 'Gifts & Donations' && transData[i].type === 'Expense'){
+      totGiftDonate += transData[i].amount;
+    }
+}
+
+var totHealthcare = 0;
+for( let i = 0; i<transData.length; i++){
+    if (transData[i].category === 'Healthcare' && transData[i].type === 'Expense'){
+      totHealthcare += transData[i].amount;
+    }
+}
+
+var totInvestment = 0;
+for( let i = 0; i<transData.length; i++){
+    if (transData[i].category === 'Investment' && transData[i].type === 'Expense'){
+      totInvestment += transData[i].amount;
+    }
+}
+
+var totPersonalCare = 0;
+for( let i = 0; i<transData.length; i++){
+    if (transData[i].category === 'Personal Care' && transData[i].type === 'Expense'){
+      totPersonalCare += transData[i].amount;
+    }
+}
+
+var totSalary = 0;
+for( let i = 0; i<transData.length; i++){
+    if (transData[i].category === 'Salary' && transData[i].type === 'Expense'){
+      totSalary += transData[i].amount;
+    }
+}
+
+var totShopping = 0;
+for( let i = 0; i<transData.length; i++){
+    if (transData[i].category === 'Shopping' && transData[i].type === 'Expense'){
+      totShopping += transData[i].amount;
+    }
+}
+
+var totSideHustle = 0;
+for( let i = 0; i<transData.length; i++){
+    if (transData[i].category === 'Side Hustle' && transData[i].type === 'Expense'){
+      totSideHustle += transData[i].amount;
+    }
+}
+
+var totTravel = 0;
+for( let i = 0; i<transData.length; i++){
+    if (transData[i].category === 'Travel' && transData[i].type === 'Expense'){
+      totTravel += transData[i].amount;
+    }
+}
+
+var totOthers = 0;
+for( let i = 0; i<transData.length; i++){
+    if (transData[i].category === 'Others' && transData[i].type === 'Expense'){
+      totOthers += transData[i].amount;
+    }
+}
+
+var consData = [     //make new array based on the conolidated value
+      totAutomobile, 
+      totBillUtil, 
+      totBusiness, 
+      totClothing, 
+      totEntertainment, 
+      totFood,
+      totGiftDonate,
+      totHealthcare,
+      totInvestment,
+      totPersonalCare,
+      totSalary,
+      totShopping,
+      totSideHustle,
+      totTravel,
+      totOthers
+    ];
+
+let sum_consData = 0;                      //sum all expenses value
+for( let i = 0; i<consData.length; i++){
+      sum_consData += consData[i];
+};
+//console.log(sum_consData)
+for ( i in consData){                                         //calculate each object percentage & parseInt to turn string to number   
+    consData[i] = parseInt((consData[i]/sum_consData)*100);
+} 
+//console.log(consData)
+
+
+
+
+// Script for creating Line charts
+const data = {
+  labels: [
+  "Automobile",
+      "Bill & Utilities",
+      "Business",
+      "Clothing",
+      "Entertainment",
+      "Food",
+      "Gifts & Donations",
+      "Healthcare",
+      "Investment",
+      "Personal Care",
+      "Salary",
+      "Shopping",
+      "Side Hustle",
+      "Travel",
+      "Others",
+  ],
+  datasets: [{
+    label: 'Expense',
+    data: consData,
+    backgroundColor: [
+        '#FF0000',
+        '#FFC0CB',
+        '#E6E6FA',
+        '#800080',
+        '#BF7FBF',
+        '#9999FF',
+        '#4C4CFF',
+        '#0080ff',
+        '#619DA4',
+        '#7AC5CD',
+        '#7acdac',
+        '#44b689',
+
+        '#00cd00',
+        '#008000',
+        '#00e500',        
       ],
-      datasets: [{
-        label: 'My First Dataset',
-        data: [300, 100],
-        backgroundColor: [
-          'rgb(255, 99, 132)',
-          'rgb(54, 162, 235)',
-          'rgb(255, 205, 86)'
-        ],
-        hoverOffset: 4
-      }]
+    hoverOffset: 1
+  }]
+};
+
+let options = {
+      plugins: {
+        legend: {
+          position: 'right',
+          labels: {
+            font: {
+              size: 10
+            }
+          }
+        }
+      },
+      
     };
   
 const config = {
   type: 'doughnut',
   data: data,
+  options: options
 };
-    // === include 'setup' then 'config' above ===
+// === include 'setup' then 'config' above ===
   
     
-    let myChart = new Chart(document.getElementById("myChart"), config);
-    // Closing script for creating Line charts
-  </script>
+let myChart = new Chart(document.getElementById("myChart"), config);
+// Closing script for creating Line charts
+</script>
