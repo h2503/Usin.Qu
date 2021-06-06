@@ -13,11 +13,18 @@
   </div>
 
   <div class="col-md-4">
-    <div class="jumbotron">
+    <div id="checkBalance" class="jumbotron">
       <h4>Total Expenses</h4>
-      <% var totalExpense = 0; %> <% for( let i = 0; i < transactionData.length; i++ ) { %> 
+      <% var totalExpense = 0; %> 
+      <% for( let i = 0; i < transactionData.length; i++ ) { %> 
         <% if (transactionData[i].type === 'Expense') { %> 
           <% totalExpense += transactionData[i].amount; %> 
+          <% if(totalExpense > totalIncome){ %>
+            <script>
+              let checkBalance = document.getElementById('checkBalance')
+              checkBalance.style.backgroundColor = "rgba(255, 0, 0, 0.5)" 
+            </script>
+         <% } %> 
         <% } %> 
       <% } %>
       <h5>$<%= totalExpense.toFixed(2) %></h5>
@@ -25,9 +32,15 @@
   </div>
 
   <div class="col-md-4">
-    <div class="jumbotron">
+    <div id="checkBalance2" class="jumbotron">
       <h4>Balance</h4>
       <% var totalBalance = totalIncome-totalExpense %>
+      <% if(totalExpense > totalBalance){ %>
+        <script>
+          let checkBalance2 = document.getElementById('checkBalance2')
+          checkBalance2.style.backgroundColor = "rgba(255, 0, 0, 0.5)" 
+        </script>
+     <% } %> 
       <h5>$<%= totalBalance.toFixed(2) %></h5>
     </div>
   </div>
