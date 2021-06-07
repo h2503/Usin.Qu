@@ -137,6 +137,10 @@ body {
     text-align: center;
 }
 
+hr {
+  background: var(--text-color);
+}
+
 h1,
 h2,
 h3,
