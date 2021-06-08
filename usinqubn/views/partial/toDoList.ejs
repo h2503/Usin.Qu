@@ -1,15 +1,19 @@
 <div class="jumbotron" style="height:326px; width: auto;">
-    <h5>Plan</h5>
+    <h3>Plan</h3>
     <div class="todoListContainer" style="height:274px; width: auto; overflow-y: scroll;">
-      <input
+      <div class="row d-flex justify-content-center m-0" style="position: sticky; top: 10px; ">
+        <input
         type="text"
         id="newTodo"
         maxlength="20"
         placeholder="Set your plan here"/>
-      <button id="addTodo">
-        <i class="fa fa-plus"></i>
-      </button>
-      <ul id="todoList"></ul>
+        <button id="addTodo">
+          <i class="fa fa-plus"></i>
+        </button>
+      </div>
+      
+      <ul id="todoList" style="margin-top: 0;"></ul>
+      
     </div>
 </div>
 <footer><%- include ('../partial/footer') %></footer>

@@ -3,7 +3,7 @@
     <div id="checkBalance" class="jumbotron">
      
      
-      <h4 class="lang" key="TotInc"></h4>
+      <h3 class="lang" key="TotInc"></h3>
       <% var totalIncome = 0; %> 
       <% for( let i = 0; i < transactionData.length; i++ ) { %> 
         <% if (transactionData[i].type === 'Income') { %> 
@@ -29,7 +29,7 @@
 
   <div class="col-md-4">
     <div id="checkBalance2" class="jumbotron">
-      <h4 class="lang" key="TotExpen"></h4>
+      <h3 class="lang" key="TotExpen"></h3>
       <% var totalExpense = 0; %> 
       <% for( let i = 0; i < transactionData.length; i++ ) { %> 
         <% if (transactionData[i].type === 'Expense') { %> 
@@ -53,7 +53,7 @@
 
   <div class="col-md-4">
     <div id="checkBalance3" class="jumbotron">
-      <h4 class="lang" key="Balance"></h4> 
+      <h3 class="lang" key="Balance"></h3> 
       <!-- checking balance function to state negative or postive amount of balance -->
       <% var totalBalance = totalIncome-totalExpense %>
       <% if(totalBalance < 0){ %>

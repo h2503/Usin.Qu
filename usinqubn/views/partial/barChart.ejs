@@ -1,5 +1,6 @@
 <div class="jumbotron">
-    <canvas id="myChart2"></canvas>
+  <h3>Income & Expense Barchart</h3>
+  <canvas id="myChart2"></canvas>
 </div>
 
 
@@ -266,7 +267,7 @@ for( let i = 0; i<transData.length; i++){
           totOthers
         ],
         fill: true,
-        backgroundColor: "rgba(255, 99, 132, 0.2)",
+        backgroundColor: "rgba(255, 99, 132)",
         borderColor: "rgb(255, 99, 132)",
         pointBackgroundColor: "rgb(255, 99, 132)",
         pointBorderColor: "#fff",
@@ -293,7 +294,7 @@ for( let i = 0; i<transData.length; i++){
           totOthers_Inc
         ],
         fill: true,
-        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+        backgroundColor: 'rgba(54, 162, 235)',
         borderColor: 'rgb(54, 162, 235)',
         pointBackgroundColor: 'rgb(54, 162, 235)',
         pointBorderColor: '#fff',
@@ -303,16 +304,30 @@ for( let i = 0; i<transData.length; i++){
     ],
   };
 
+  let options2 = {
+      plugins: {
+        legend: {
+          position: 'top',
+          labels: {
+            font: {
+              size:16
+            }
+          }
+        }
+      },
+      
+};
+
   const config2 = {
     type: "bar",
     data: dataRadar,
-    options: {
+    options: options2,
       elements: {
         line: {
           borderWidth: 3,
         },
       },
-    },
+    
   };
   let myChart2 = new Chart(document.getElementById("myChart2"), config2);
   // Closing script for creating Radar charts
