@@ -1,7 +1,9 @@
 <div class="row">
   <div class="col-md-4">
     <div id="checkBalance" class="jumbotron">
-      <h4>Total Income</h4>
+     
+     
+      <h4 class="lang" key="TotInc"></h4>
       <% var totalIncome = 0; %> 
       <% for( let i = 0; i < transactionData.length; i++ ) { %> 
         <% if (transactionData[i].type === 'Income') { %> 
@@ -20,12 +22,14 @@
         <% } %> 
       <% } %>
       <h5>$<%= totalIncome.toFixed(2) %></h5>
+
+      
     </div>
   </div>
 
   <div class="col-md-4">
     <div id="checkBalance2" class="jumbotron">
-      <h4>Total Expenses</h4>
+      <h4 class="lang" key="TotExpen"></h4>
       <% var totalExpense = 0; %> 
       <% for( let i = 0; i < transactionData.length; i++ ) { %> 
         <% if (transactionData[i].type === 'Expense') { %> 
@@ -49,7 +53,7 @@
 
   <div class="col-md-4">
     <div id="checkBalance3" class="jumbotron">
-      <h4>Balance</h4> 
+      <h4 class="lang" key="Balance"></h4> 
       <!-- checking balance function to state negative or postive amount of balance -->
       <% var totalBalance = totalIncome-totalExpense %>
       <% if(totalBalance < 0){ %>
