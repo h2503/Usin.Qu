@@ -6,9 +6,10 @@
     padding: 0;
 }
 
-body {
-    width: 100%;
-    
+#mainPage {
+    height: 100vh;
+    width: auto;
+    background: var(--bkg-img); 
 }
 
 #mainBody {
@@ -100,19 +101,18 @@ p {
         --text-color: #E4E6EB;
         --bkg-color1: #16171a;
         --bkg-color2: #323437;
-
+        --bkg-img: linear-gradient(to bottom, rgba(0,0,0, 0.90), rgba(0,0,0, 0.90)),
+        url("/img/loginBG.jpg");
     }
 
     body.light-theme {
         --text-color: #1C1E21;
-        --bkg-color1: #E4E6EB;
+        --bkg-color1: #e4e6eb;
         --bkg-color2: #fff;
+        --bkg-img: linear-gradient(to bottom, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)),
+        url("/img/loginBG.jpg");
     }
 
-}
-
-body {
-    background: var(--bkg-color1);
 }
 
 .jumbotron{
