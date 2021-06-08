@@ -1,87 +1,115 @@
-<div class="row justify-content-center">
-    <h3>Add Transaction</h3>
-</div>
+<div class="addForm">
+  <form class="addTrans" action="/" method="post">
+    <div class="row justify-content-center">
+      <h3 class="lang" key="AddTrans">Add Transaction</h3>
+    </div>
+    <hr class="solid" />
+    <div class="large-group">
+      <div class="small-group">
+        <label class="lang" key="Type">Type:</label>
+        <div class="wrapper">
+          <label for="type">
+            <input type="radio" id="type" name="type" value="Income" checked />
+            <span class="lang income" key="Income">Income</span>
+          </label>
 
-<hr class="solid">
+          <label for="type">
+            <input type="radio" id="type" name="type" value="Expense" />
+            <span class="lang expense" key="Expense">Expense</span>
+          </label>
+        </div>
+      </div>
 
-<div class="row justify-content-center">
-    <form action="/" method="post">
-        <div class="row">
-            <div class="input-field">
-                <label for="date">Date</label>
-                <input type="date" id="date" name="date" required>
-            </div>
-        </div>
+      <div class="small-group">
+        <label for="mode">Mode</label>
+        <select id="mode" name="mode">
+          <option class="lang" key="Cash" value="Cash">Cash</option>
+          <option class="lang" key="Credit" value="Credit Card">
+            Credit Card
+          </option>
+          <option class="lang" key="Debit" value="Debit Card">
+            Debit Card
+          </option>
+          <option class="lang" key="NetBank" value="Net Banking">
+            Net Banking
+          </option>
+          <option class="lang" key="Cheque" value="Cheque">Cheque</option>
+        </select>
+      </div>
 
-        <div class="row">
-            <div class="input-field">
-                <p>Type:</p>
-                <input type="radio" id="type" name="type" value="Income">
-                <label for="type">Income</label><br>
-                <input type="radio" id="type" name="type" value="Expense" checked>
-                <label for="type">Expense</label><br>
-            </div>
-        </div>
+      <div class="small-group">
+        <label for="category" class="lang" key="Category">Category</label>
+        <select id="category" name="category">
+          <option class="lang" key="Automobiles" value="Automobile">
+            Automobile
+          </option>
+          <option class="lang" key="BillUlti" value="Bill & Utilities">
+            Bill & Utilities
+          </option>
+          <option class="lang" key="Business" value="Business">Business</option>
+          <option class="lang" key="Clothing" value="Clothing">Clothing</option>
+          <option class="lang" key="Entertainment" value="Entertainment">
+            Entertainment
+          </option>
+          <option class="lang" key="Food" value="Food">Food</option>
+          <option class="lang" key="GiftDonations" value="Gifts & Donations">
+            Gifts & Donations
+          </option>
+          <option class="lang" key="Healthcare" value="Healthcare">
+            Healthcare
+          </option>
+          <option class="lang" key="Investment" value="Investment">
+            Investment
+          </option>
+          <option class="lang" key="PersonalCare" value="Personal Care">
+            Personal Care
+          </option>
+          <option class="lang" key="Salary" value="Salary">Salary</option>
+          <option class="lang" key="Shopping" value="Shopping">Shopping</option>
+          <option class="lang" key="SideHustle" value="Side Hustle">
+            Side Hustle
+          </option>
+          <option class="lang" key="Travel" value="Travel">Travel</option>
+          <option class="lang" key="Others" value="Others" selected>
+            Others
+          </option>
+        </select>
+      </div>
 
-        <div class="row">
-            <div class="input-field">
-                <label for="category">Category</label>
-                <select id="category" name="category">
-                    <option value="Automobile">Automobile</option>
-                    <option value="Bill & Utilities">Bill & Utilities</option>
-                    <option value="Business">Business</option>
-                    <option value="Clothing">Clothing</option>
-                    <option value="Entertainment">Entertainment</option>
-                    <option value="Food">Food</option>
-                    <option value="Gifts & Donations">Gifts & Donations</option>
-                    <option value="Healthcare">Healthcare</option>
-                    <option value="Investment">Investment</option>
-                    <option value="Personal Care">Personal Care</option>
-                    <option value="Salary">Salary</option>
-                    <option value="Shopping">Shopping</option>
-                    <option value="Side Hustle">Side Hustle</option>
-                    <option value="Travel">Travel</option>
-                    <option value="Others" selected>Others</option>
-                </select>
-            </div>
-        </div>
+      <div class="small-group">
+        <label class="lang" key="Amount" for="amount">Amount</label>
+        <input
+          type="number"
+          id="amount"
+          name="amount"
+          min="0.01"
+          max="9999999"
+          step="0.01"
+          onchange="(function(el){el.value=parseFloat(el.value).toFixed(2);})(this)"
+        />
+      </div>
 
-        <div class="row">
-            <div class="input-field">
-                <label for="amount">Amount</label>
-                <input  type="number" 
-                        id="amount" 
-                        name="amount" 
-                        min="0.01" 
-                        max="9999999" 
-                        step="0.01"
-                        onchange="(function(el){el.value=parseFloat(el.value).toFixed(2);})(this)">
-            </div>
-        </div>
+      <div class="small-group">
+        <h5 class="lang" key="Comments">Comments</h5>
+        <input type="text" name="comment" id="comment" maxlength="20" />
+      </div>
 
-        <div class="row">
-            <div class="input-field">
-                <label for="mode">Mode</label>
-                <select id="mode" name="mode">
-                    <option value="Cash">Cash</option>
-                    <option value="Credit Card">Credit Card</option>
-                    <option value="Debit Card">Debit Card</option>
-                    <option value="Net Banking">Net Banking</option>
-                    <option value="Cheque">Cheque</option>
-                </select>
-            </div>
-        </div>
+      <div class="small-group">
+        <label for="date" class="lang" key="Date">Date</label>
+        <input type="date" id="date" name="date" required />
+      </div>
 
-        <div class="row">
-            <div class="input-field">
-                <h5>Comments</h5>
-                <input type="text" name="comment" id="comment" maxlength="20">
-            </div>
+      <hr class="solid" />
+      <div class="small-group">
+        <div class="row justify-content-center">
+          <button class="lang btn btn-primary" key="Save">
+            <input type="submit" value="Save" />
+          </button>
+          <a href="/dashboard" class="lang btn btn-secondary" key="Cancel"
+            >Cancel</a
+          >
         </div>
-        <hr class="solid">
-        <div class="row justify-content-between">
-            <input type="submit" value="Save" class="btn btn-primary">
-            <a href="/dashboard" class="btn btn-secondary">Cancel</a>
-        </div>
-    </form>
+      </div>
+    </div>
+  </form>
 </div>
