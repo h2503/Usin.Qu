@@ -1,4 +1,4 @@
-<div class="jumbotron">
+<div class="jumbotron myChart2_Jum">
   <h3>Income & Expense Barchart</h3>
   <canvas id="myChart2"></canvas>
 </div>
@@ -226,9 +226,9 @@ for( let i = 0; i<transData.length; i++){
 
 
 
-// Script for creating Radar charts
+// Script for creating Bar charts
 
-  const dataRadar = {
+  const dataBar = {
     labels: [
       "Automobile",
       "Bill & Utilities",
@@ -303,33 +303,34 @@ for( let i = 0; i<transData.length; i++){
        }
     ],
   };
+  
 
-  let options2 = {
-      plugins: {
-        legend: {
-          position: 'top',
-          labels: {
-            font: {
-              size:16
-            }
-          }
-        }
-      },
-      
-};
+ 
 
   const config2 = {
     type: "bar",
-    data: dataRadar,
-    options: options2,
-      elements: {
-        line: {
-          borderWidth: 3,
-        },
-      },
-    
+    data: dataBar,
+    /*options: {
+      scales: {
+        yAxes: [{
+          type: 'logarithmic',
+          ticks: {
+            callback: function(tick, index, ticks) {
+              return tick.toLocaleString();
+            }
+          },
+          afterBuildTicks: function(pckBarChart) {
+            pckBarChart.ticks = pckBarChart.chart.data.datasets[0].data.flatMap(i => [
+              50 * (Math.floor(i / 50)), // lower 50
+              50 * (Math.ceil(i / 50)) // higer 50
+            ])
+          }
+        }]
+      }
+    }*/
   };
+ 
   let myChart2 = new Chart(document.getElementById("myChart2"), config2);
-  // Closing script for creating Radar charts
+  // Closing script for creating Bar charts
 
 </script>

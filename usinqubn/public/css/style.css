@@ -80,18 +80,16 @@ p {
 
 
 /* Line and Radar Chart*/
+
+
 #myChart {
     width: 90%;
     height:auto;
     margin:auto;
 }
 
-#myChart label font{
-    color: red;
-}
-
 #myChart2 {
-    width: 80%;
+    width: 100%;
     height:auto;
     margin:auto;
 }
@@ -113,7 +111,7 @@ p {
         --text-color: #1C1E21;
         --bkg-color1: #e4e6eb;
         --bkg-color2: #fff;
-        --bkg-img: linear-gradient(to bottom, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)),
+        --bkg-img: linear-gradient(to bottom, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)),
         url("/img/loginBG.jpg");
     }
 
@@ -363,6 +361,15 @@ footer {
     
     footer {
         display:none;
+    }
+
+    #myChart2{
+        height: 60vh;
+        width:auto;
+    }
+
+    .myChart2_Jum {
+        overflow-x: scroll;
     }
     
 }

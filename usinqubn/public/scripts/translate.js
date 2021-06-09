@@ -6,7 +6,7 @@ var arrLang = {
     ChLang: "Change Language",
     DelData: "Delete Data",
     DelAcc: "Delete Account",
-    Advices: "THIS IS WHERE YOU SEEK FOR FINANCIAL ADVICES",
+    Advices: "Financial Tips",
     Transaction: "Latest Transactions",
     AddTrans: "Add Transaction",
     EditTrans: "Edit Transactions",
@@ -26,8 +26,8 @@ var arrLang = {
     Add: "Add",
     History: "History",
     HistorySide: "History Transaction",
-    AdvicesSide: "Advices",
-    AdvicesMoney: "Financial Advices",
+    AdvicesSide: "Tips",
+    AdvicesMoney: "Financial Tips",
     Settings: "Settings",
 
     //Income & Expense
@@ -70,7 +70,7 @@ var arrLang = {
     ChLang: "Tukar Bahasa",
     DelData: "Padam Data",
     DelAcc: "Buang Akaun",
-    Advices: "Di sini adalah untuk kamu mencari nasihat tentang kewangan",
+    Advices: "Tips & Nasihat Kewangan",
     Transaction: "Transaksi Terkini",
     AddTrans: "Tambah Transaksi",
     EditTrans: "Mengedit Transaksi",
@@ -86,19 +86,19 @@ var arrLang = {
     Plan: "Merancang",
 
     //Sidebar
-    Dashboard: "Pemuka",
+    Dashboard: "Dashboard",
     Add: "Tambah",
     History: "Sejarah",
     HistorySide: "Sejarah Transaksi",
-    AdvicesSide: "Nasihat",
-    AdvicesMoney: "Nasihat Kewangan",
+    AdvicesSide: "Tip",
+    AdvicesMoney: "Tip Kewangan",
     Settings: "Tetapan",
 
     //Balance, Income & Expense
     TotInc: "Jumlah Pendapatan",
     TotExpen: "Jumlah Perbelanjaan",
     Balance: "Baki",
-    Income: "Gaji",
+    Income: "Pendapatan",
     Expense: "Perbelanjaan",
     ExpensCate: "Kategori Perbelanjaan",
 
@@ -114,8 +114,8 @@ var arrLang = {
     Investment: "Pelaburan",
     PersonalCare: "Penjagaan Diri",
     Salary: "Gaji",
-    Shopping: "Membeli-belah",
-    SideHustle: "Keramaian Sampingan",
+    Shopping: "Beli-belah",
+    SideHustle: "Sampingan",
     Travel: "Melancong",
     Others: "Lain-lain",
 

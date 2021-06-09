@@ -127,9 +127,6 @@ router.delete("/:id", ensureAuth, async (req, res) => {
   }
 });
 
-
-
-
 //@desc Financial-advices
 //@routes GET /financial-advices
 router.get("/financial-advices", ensureAuth, (req, res) => {

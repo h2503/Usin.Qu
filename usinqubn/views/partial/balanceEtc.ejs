@@ -3,7 +3,7 @@
     <div id="checkBalance" class="jumbotron">
      
      
-      <h3 class="lang" key="TotInc"></h3>
+      <h3 class="lang" key="TotInc">Total Income</h3>
       <% var totalIncome = 0; %> 
       <% for( let i = 0; i < transactionData.length; i++ ) { %> 
         <% if (transactionData[i].type === 'Income') { %> 
@@ -12,7 +12,7 @@
             <%  %>
             <script>
               let checkBalance = document.getElementById('checkBalance')
-              checkBalance.style.backgroundColor = "rgba(0, 128, 0, 0.5)" 
+              checkBalance.style.backgroundColor = "rgba(0, 128, 0, 0.75)" 
             </script>
           <% } else { %>
             <!-- <script>
@@ -29,7 +29,7 @@
 
   <div class="col-md-4">
     <div id="checkBalance2" class="jumbotron">
-      <h3 class="lang" key="TotExpen"></h3>
+      <h3 class="lang" key="TotExpen">Total Expenses</h3>
       <% var totalExpense = 0; %> 
       <% for( let i = 0; i < transactionData.length; i++ ) { %> 
         <% if (transactionData[i].type === 'Expense') { %> 
@@ -38,11 +38,11 @@
             <!-- change more than 0 = red flag -->
             <script>
               let checkBalance2 = document.getElementById('checkBalance2')
-              checkBalance2.style.backgroundColor = "rgba(0, 128, 0, 0.5)" 
+              checkBalance2.style.backgroundColor = "rgba(0, 128, 0, 0.75)" 
             </script>
          <% } else { %>
           <script>
-            checkBalance2.style.backgroundColor = "rgba(255, 0, 0, 0.5)" 
+            checkBalance2.style.backgroundColor = "rgba(255, 0, 0, 0.75)" 
           </script>
           <% } %> 
         <% } %> 
@@ -53,17 +53,17 @@
 
   <div class="col-md-4">
     <div id="checkBalance3" class="jumbotron">
-      <h3 class="lang" key="Balance"></h3> 
+      <h3 class="lang" key="Balance">Balance</h3> 
       <!-- checking balance function to state negative or postive amount of balance -->
       <% var totalBalance = totalIncome-totalExpense %>
       <% if(totalBalance < 0){ %>
         <script>
           let checkBalance3 = document.getElementById('checkBalance3')
-          checkBalance3.style.backgroundColor = "rgba(255, 0, 0, 0.5)" 
+          checkBalance3.style.backgroundColor = "rgba(255, 0, 0, 0.75)" 
         </script>
       <% } else { %>
         <script>
-          checkBalance3.style.backgroundColor = "rgba(0, 128, 0, 0.5)" 
+          checkBalance3.style.backgroundColor = "rgba(0, 128, 0, 0.75)" 
         </script>
       <% } %> 
       <h5>$<%= totalBalance.toFixed(2) %></h5>
