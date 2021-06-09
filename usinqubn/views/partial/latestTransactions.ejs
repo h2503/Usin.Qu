@@ -17,7 +17,7 @@
         <th>Mode</th>
         <th class="lang" key="Amount">Amount</th>
         <th class="lang" key="Comments">Comments</th>
-        <th class="lang" key="Edit">Edit</th>
+        
       </tr>
     </thead>
     <tbody>
@@ -41,23 +41,7 @@
 
         <td><%- transactionData[i].comment %></td>
 
-        <td id="updateDelete">
-          <a
-            href="edit_transaction/<%- transactionData[i]._id %>"
-            class="text-decoration-none"
-            ><i class="fas fa-edit"></i
-          ></a>
-          <form
-            action="/<%- transactionData[i]._id %>"
-            method="post"
-            id="delete-form"
-          >
-            <input type="hidden" name="_method" value="delete" />
-            <button type="submit" class="btn">
-              <i class="fas fa-trash-alt"></i>
-            </button>
-          </form>
-        </td>
+        
       </tr>
       <% } %>
     </tbody>

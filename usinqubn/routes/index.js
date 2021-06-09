@@ -107,7 +107,7 @@ router.put("/:id", ensureAuth, async (req, res) => {
       new: true,
       runValidators: true
     })
-    res.redirect('/dashboard')
+    res.redirect('/history')
   } catch (error) {
     console.error(err)
     return res.render('errors/500')

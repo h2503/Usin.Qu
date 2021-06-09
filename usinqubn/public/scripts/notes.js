@@ -48,6 +48,7 @@ $(document).on("click", ".removeTodo", function () {
   localStorage.setItem("todos", todos);
   return false;
 });
+
 //todo complete
 $(document).on("click", ".doneTodo", function () {
   var completeItemId = "#" + $(this).attr("data-id") + " .todotext";
