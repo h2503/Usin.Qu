@@ -1,69 +1,34 @@
-<div class="col-sm-8">
-    <h1 class="lang" key="SETTINGS"></h1>
+<div class="d-flex justify-content-center">
+    <div class="jumbotron" style="padding:40px 100px;">
+        <h1 class="lang" key="SETTINGS">Settings</h1>
+        <br>
+        <div class="profile_details">
+            <img src="<%- dp %> " alt="" style="width: 150px; height:auto; border-radius: 15px;">
+            <br>
+            <br>
+            <h3><%- name %></h3>
 
-    <div class="profile_details">
-        <img src="<%- dp %> " alt="">
-        <h3><%- name %></h3>
-    </div>
+        </div>
 
-    <hr class="solid">
-
-    <h3 class="lang" key="Dark"></h3>
-    <button class="lang btn btn-toggle btn-dark" key="Dark"></button>
-
-    <h3 class="lang" key="ChLang"></h3>
-    <button class="translate btn btn-dark" id="en-gb">English</button>
-    &nbsp;
-    <button class="translate btn btn-dark" id="mal-bn">Melayu</button>
-
-    <hr class="solid">
-
-    <h3 class="lang" key="DelAcc"></h3>
-    <button class="lang btn btn-warning" key="DelData"></button>
-    <button class="lang btn btn-danger" key="DelAcc"></button>
-</div>
-
-<!--
-<div class="wrapper align-items-center">
-<div class="col-md-12 d-flex justify-content-center">
-    <h2> Color Scheme</h2>
-    <br>
-    <button class="btn btn-light" onclick="swapStyle('style.css')">Light Mode</button>
-    <button class="btn btn-dark" onclick="swapStyle('dark.css')">Dark Mode</button>
-</div>
-
-<script type="text/javascript">
-
-    var setTheme = localStorage.getItem('theme')
-    console.log('theme:', setTheme)
-
-    if (setTheme == null){
-        swapStyle('style.css')
-    }else{
-        swapStyle(setTheme)
-    }
-
-    function swapStyle(sheet){
-        document.getElementById('mystylesheet').href = sheet
-        localStorage.setItem('theme', sheet)
-    }
-
-
-    /*
-    var setTheme = localStorage.getItem('theme')
-    if (setTheme == null){
-        swapStyles('light.css')
-    }else{
-        swapStyles(setTheme)
-    }
+        <hr class="solid">
+        <br>
+        <h3 class="lang" key="Scheme">Scheme</h3>
         
-    
-    function swapStyles(sheet){
-        document.getElementById('mystylesheet').href = sheet
-        localStorage.setItem('theme', sheet)
-    }
-    */
-    
-</script>
-
--->
+        <button class="lang btn btn-toggle btn-dark" key="Dark"></button>
+        <br>
+        <br>
+        <h3 class="lang" key="ChLang"></h3>
+        <button class="translate btn btn-dark" id="en-gb">English</button>
+        &nbsp;
+        <button class="translate btn btn-dark" id="mal-bn">Melayu</button>
+        <br>
+        <br>
+        <hr class="solid">
+        <br>
+        <h3 class="lang" key="DelAcc"></h3>
+        <button class="lang btn btn-warning" key="DelData"></button>
+        <button class="lang btn btn-danger" key="DelAcc"></button>
+        <br>
+        <br>
+    </div>
+</div>

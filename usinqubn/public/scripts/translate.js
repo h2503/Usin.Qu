@@ -1,7 +1,8 @@
 var arrLang = {
   // This is the English language
   "en-gb": {
-    SETTINGS: "Setting Pages",
+    SETTINGS: "Settings",
+    Scheme: "Scheme",
     Dark: "Dark Mode",
     ChLang: "Change Language",
     DelData: "Delete Data",
@@ -65,8 +66,9 @@ var arrLang = {
 
   //  This is the Malay Language
   "mal-bn": {
-    SETTINGS: "Halaman Tetapan",
-    Dark: "Mode Gelap",
+    SETTINGS: "Tetapan",
+    Scheme: "Skema",
+    Dark: "Mod Gelap",
     ChLang: "Tukar Bahasa",
     DelData: "Padam Data",
     DelAcc: "Buang Akaun",
