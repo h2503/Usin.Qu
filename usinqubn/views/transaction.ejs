@@ -86,6 +86,7 @@
           max="9999999"
           step="0.01"
           onchange="(function(el){el.value=parseFloat(el.value).toFixed(2);})(this)"
+          required
         />
       </div>
 
@@ -105,8 +106,8 @@
           <button class="lang btn btn-primary" key="Save">
             <input type="submit" value="Save" />
           </button>
-          <a href="/dashboard" class="lang btn btn-secondary" key="Cancel"
-            >Cancel</a
+          <a href="/transaction" class="lang btn btn-secondary" key="Clear"
+            >Clear</a
           >
         </div>
       </div>
