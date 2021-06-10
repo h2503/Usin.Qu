@@ -23,6 +23,9 @@ var arrLang = {
     EditDel: "Edit/Delete",
     Plan: "Plan",
     Payment: "Payment",
+    All: "All",
+    Last7days: "Last 7 days",
+    Last30days: "Last 30 days",
 
     //Sidebar
     Dashboard: "Dashboard",
@@ -39,7 +42,8 @@ var arrLang = {
     Balance: "Balance",
     Income: "Income",
     Expense: "Expense",
-    ExpensCate: "Expense Categories",
+    ExpensCate: "Expense Categories (%)",
+    IncExp: "Incomes & Expenses",
 
     //Category sections
     Automobiles: "Automobile",
@@ -88,8 +92,11 @@ var arrLang = {
     Save: "Simpan",
     Edit: "Mengedit",
     EditDel: "Mengedit/Padam",
-    Plan: "Merancang",
     Payment: "Pembayaran",
+    Plan: "Rancang",
+    All: "Semua",
+    Last7days: "Seminggu",
+    Last30days: "Sebulan",
 
     //Sidebar
     Dashboard: "Dashboard",
@@ -106,7 +113,8 @@ var arrLang = {
     Balance: "Baki",
     Income: "Pendapatan",
     Expense: "Perbelanjaan",
-    ExpensCate: "Kategori Perbelanjaan",
+    ExpensCate: "Kategori Perbelanjaan (%)",
+    IncExp: "Pendapatan & Perbelanjaan",
 
     //Category sections
     Automobiles: "Kereta",
