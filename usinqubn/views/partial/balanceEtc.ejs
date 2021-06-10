@@ -15,9 +15,9 @@
               checkBalance.style.backgroundColor = "rgba(0, 128, 0, 0.75)" 
             </script>
           <% } else { %>
-            <!-- <script>
+            <script>
               checkBalance.style.backgroundColor = "rgba(255, 0, 0, 0.5)" 
-            </script> -->
+            </script>
           <% } %> 
         <% } %> 
       <% } %>
@@ -34,15 +34,15 @@
       <% for( let i = 0; i < transactionData.length; i++ ) { %> 
         <% if (transactionData[i].type === 'Expense') { %> 
           <% totalExpense += transactionData[i].amount; %> 
-          <% if(totalExpense > totalIncome){ %>
+          <% if(totalExpense > 0){ %>
             <!-- change more than 0 = red flag -->
             <script>
               let checkBalance2 = document.getElementById('checkBalance2')
-              checkBalance2.style.backgroundColor = "rgba(0, 128, 0, 0.75)" 
+              checkBalance2.style.backgroundColor = "rgba(255, 0, 0, 0.75)" 
             </script>
          <% } else { %>
           <script>
-            checkBalance2.style.backgroundColor = "rgba(255, 0, 0, 0.75)" 
+            checkBalance2.style.backgroundColor = "rgba(0, 128, 0, 0.75)" 
           </script>
           <% } %> 
         <% } %> 
