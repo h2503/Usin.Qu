@@ -1,13 +1,13 @@
 <div class="addForm">
-  <form class="addTrans" action="/<%- transaction._id %> " method="post">
+  <form class="formTransaction" action="/" method="post">
     <div class="row justify-content-center">
-      <h3 class="lang" key="EditTrans">Edit Transaction</h3>
+      <h1 class="lang" key="EditTrans">Edit Transaction</h1>
     </div>
     <hr class="solid" />
-    <div class="large-group">
+    <div class="row justify-content-center">
       <input type="hidden" name="_method" value="put" />
 
-      <div class="small-group">
+      <div class="form-group col-sm-4 col-xs-12">
         <label class="lang" key="Type">Type:</label>
         <label for="type">
           <input type="radio" id="type" name="type" value="Income" checked />
@@ -20,54 +20,99 @@
         </label>
       </div>
 
-      <div class="small-group">
-        <label for="mode">Mode</label>
-        <select id="mode" name="mode">
-          <option class="lang" key="Cash" value="Cash">Cash</option>
-          <option class="lang" key="Credit" value="Credit Card">Credit Card</option>
-          <option class="lang" key="Debit" value="Debit Card">Debit Card</option>
-          <option class="lang" key="NetBank" value="Net Banking">Net Banking</option>
-          <option class="lang" key="Cheque" value="Cheque">Cheque</option>
-        </select>
+      <div class="col-sm-4 col-xs-12">
+        <div class="form-group">
+          <label for="mode" class="lang" key="Payment">Payment</label>
+          <select id="mode" name="mode">
+            <option class="lang" key="Cash" value="Cash">Cash</option>
+            <option class="lang" key="Credit" value="Credit Card">
+              Credit Card
+            </option>
+            <option class="lang" key="Debit" value="Debit Card">
+              Debit Card
+            </option>
+            <option class="lang" key="NetBank" value="Net Banking">
+              Net Banking
+            </option>
+            <option class="lang" key="Cheque" value="Cheque">Cheque</option>
+          </select>
+        </div>
       </div>
 
-      <div class="small-group">
-        <label for="category" class="lang" key="Category">Category</label>
-        <select id="category" name="category">
-          <option class="lang" key="Automobiles" value="Automobile">Automobile</option>
-          <option class="lang" key="BillUlti" value="Bill & Utilities">Bill & Utilities</option>
-          <option class="lang" key="Business" value="Business">Business</option>
-          <option class="lang" key="Clothing" value="Clothing">Clothing</option>
-          <option class="lang" key="Entertainment" value="Entertainment">Entertainment</option>
-          <option class="lang" key="Food" value="Food">Food</option>
-          <option class="lang" key="GiftDonations" value="Gifts & Donations">Gifts & Donations</option>
-          <option class="lang" key="Healthcare" value="Healthcare">Healthcare</option>
-          <option class="lang" key="Investment" value="Investment">Investment</option>
-          <option class="lang" key="PersonalCare" value="Personal Care">Personal Care</option>
-          <option class="lang" key="Salary" value="Salary">Salary</option>
-          <option class="lang" key="Shopping" value="Shopping">Shopping</option>
-          <option class="lang" key="SideHustle" value="Side Hustle">Side Hustle</option>
-          <option class="lang" key="Travel" value="Travel">Travel</option>
-          <option class="lang" key="Others" value="Others" selected>Others</option>
-        </select>
+      <div class="col-sm-4 col-xs-12">
+        <div class="form-group">
+          <label for="category" class="lang" key="Category">Category</label>
+          <select id="category" name="category">
+            <option class="lang" key="Automobiles" value="Automobile">
+              Automobile
+            </option>
+            <option class="lang" key="BillUlti" value="Bill & Utilities">
+              Bill & Utilities
+            </option>
+            <option class="lang" key="Business" value="Business">
+              Business
+            </option>
+            <option class="lang" key="Clothing" value="Clothing">
+              Clothing
+            </option>
+            <option class="lang" key="Entertainment" value="Entertainment">
+              Entertainment
+            </option>
+            <option class="lang" key="Food" value="Food">Food</option>
+            <option class="lang" key="GiftDonations" value="Gifts & Donations">
+              Gifts & Donations
+            </option>
+            <option class="lang" key="Healthcare" value="Healthcare">
+              Healthcare
+            </option>
+            <option class="lang" key="Investment" value="Investment">
+              Investment
+            </option>
+            <option class="lang" key="PersonalCare" value="Personal Care">
+              Personal Care
+            </option>
+            <option class="lang" key="Salary" value="Salary">Salary</option>
+            <option class="lang" key="Shopping" value="Shopping">
+              Shopping
+            </option>
+            <option class="lang" key="SideHustle" value="Side Hustle">
+              Side Hustle
+            </option>
+            <option class="lang" key="Travel" value="Travel">Travel</option>
+            <option class="lang" key="Others" value="Others" selected>
+              Others
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-4 col-xs-12">
+        <div class="form-group">
+          <label for="date" class="lang" key="Date">Date</label>
+          <input type="date" id="date" name="date" required />
+        </div>
       </div>
 
-      <div class="small-group">
-        <label for="amount" class="lang" key="Amount">Amount</label>
-        <input
-          type="number"
-          id="amount"
-          name="amount"
-          min="0.01"
-          max="9999999"
-          step="0.01"
-          value="<%- transaction.amount %>"
-          onchange="(function(el){el.value=parseFloat(el.value).toFixed(2);})(this)"
-        />
+      <div class="col-sm-4 col-xs-12">
+        <div class="form-group">
+          <label class="lang" key="Amount" for="amount">Amount</label>
+          <input
+            type="number"
+            id="amount"
+            name="amount"
+            min="0.01"
+            max="9999999"
+            step="0.01"
+            onchange="(function(el){el.value=parseFloat(el.value).toFixed(2);})(this)"
+          />
+        </div>
       </div>
 
-      <div class="small-group">
-        <h5 class="lang" key="Comments">Comments</h5>
+      <div class="col-sm-4 col-xs-12">
+        <div class="form-group">
+          <label class="lang" key="Comments">Comments</label>
         <input
           type="text"
           name="comment"
@@ -76,19 +121,19 @@
           value="<%- transaction.comment %>"
         />
       </div>
+    </div>
+    </div>
 
-      <div class="small-group">
-        <label for="date" class="lang" key="Date">Date</label>
-        <input type="date" id="date" name="date" required />
-      </div>
-
-      <hr class="solid" />
-      <div class="small-group">
-        <div class="row justify-content-center">
-          <button class="lang btn btn-primary" key="Save">
+    <hr class="solid" />
+    <div class="row">
+      <div class="col-sm-12 col-xs-12">
+        <div class="form-inline justify-content-center";">
+          <button class="lang btn btn-primary" style="margin: 10px;" key="Save">
             <input type="submit" value="Save" />
           </button>
-          <a href="/history" class="lang btn btn-secondary" key="Cancel">Cancel</a>
+          <a href="/dashboard" class="lang btn btn-secondary" key="Cancel"
+            >Cancel</a
+          >
         </div>
       </div>
     </div>

@@ -22,6 +22,7 @@ var arrLang = {
     Edit: "Edit",
     EditDel: "Edit/Delete",
     Plan: "Plan",
+    Payment: "Payment",
 
     //Sidebar
     Dashboard: "Dashboard",
@@ -88,6 +89,7 @@ var arrLang = {
     Edit: "Mengedit",
     EditDel: "Mengedit/Padam",
     Plan: "Merancang",
+    Payment: "Pembayaran",
 
     //Sidebar
     Dashboard: "Dashboard",
