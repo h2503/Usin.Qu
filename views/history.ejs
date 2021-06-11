@@ -16,7 +16,7 @@
         <tr>
           <th class="lang" key="Date">Date</th>
           <th class="lang" key="Category">Category</th>
-          <th>Mode</th>
+          <th class="lang" key="Mode">Mode</th>
           <th class="lang" key="Amount">Amount</th>
           <th class="lang" key="Comments">Comments</th>
           <th class="lang" key="EditDel">Edit/Delete</th>
@@ -27,6 +27,7 @@
         <tr>
           <td><%- moment(transactionData[i].date).format('Do MMMM YYYY') %></td>
           <td><%- transactionData[i].category %></td>
+          <td><%- transactionData[i].mode %></td>
 
           <% if (transactionData[i].type === 'Income') { %>
           <td style="background-color: rgba(0, 128, 0, 0.5)">
@@ -37,7 +38,6 @@
             $<%- transactionData[i].amount.toFixed(2) %>
           </td>
           <% } %>
-          <td><%- transactionData[i].mode %></td>
           <td><%- transactionData[i].comment %></td>
 
           <td id="updateDelete">
