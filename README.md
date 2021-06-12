@@ -5,6 +5,11 @@ An Income & Expense tracker app, built by us, Fadli, Hafiiz & Syafiq, as part of
 
 ---------------------------------------------------------------
 
+Go to deployed site:
+https://usin-qu.herokuapp.com/
+
+---------------------------------------------------------------
+
 To run locally:
 
 Need to initailize node_modules and install all packages.
@@ -16,4 +21,3 @@ if fullfilled, in terminal >>
 'npm run start' to run in production mode 
 
 'npm run dev' to run in development mode: 
-
