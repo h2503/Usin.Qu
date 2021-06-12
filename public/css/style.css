@@ -338,6 +338,13 @@ footer {
     
 }
 
+.mainFooter {
+    display: table;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 @media (max-width: 768px) {
     body {
         overflow-y: scroll;
@@ -399,5 +406,7 @@ footer {
         height: auto;
         margin: 20px 0;
     }
+    
+    
     
 }
