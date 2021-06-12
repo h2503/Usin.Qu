@@ -380,5 +380,24 @@ footer {
     .filterBtn {
         display: none;
     }
+
+    #transactionHistory {
+        
+        margin: 0 !important;
+    }
+
+    .loginPage h3 {
+        font-size: 20px;
+    }
+
+    .loginPage h2 {
+        font-size: 25px;
+        font-weight: bold;
+    }
+
+    .loginPage .card {
+        height: auto;
+        margin: 20px 0;
+    }
     
 }
