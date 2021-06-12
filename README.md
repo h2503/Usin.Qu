@@ -1,7 +1,7 @@
 # Usin.Qu
-Money Manager
+Money Manager Web App
 
-An Income & Expense tracker app, built by us, Fadli, Hafiiz & Syafiq, as part of our Final full-stack project for Coding.Bn
+An Income & Expense tracker app, built by us, Fadli, Hafiiz & Syafiq, as part of our Final full-stack project for Coding.Bn 2k21
 
 ---------------------------------------------------------------
 
@@ -18,6 +18,6 @@ Need to provide MONGO_URI, GOOGLE_CLIENT_ID & GOOGLE_CLIENT_SECRET keys in Confi
 
 if fullfilled, in terminal >>
 
-'npm run start' to run in production mode 
+'npm run start' to run in production mode .
 
-'npm run dev' to run in development mode: 
+'npm run dev' to run in development mode.
