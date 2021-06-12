@@ -14,7 +14,7 @@ To run locally:
 
 Need to initailize node_modules and install all packages.
 
-Need to provide MONGO_URI, GOOGLE_CLIENT_ID & GOOGLE_CLIENT_SECRET keys in Config.env
+Need to provide MONGO_URI, GOOGLE_CLIENT_ID & GOOGLE_CLIENT_SECRET keys in Config/Config.env file.
 
 if fullfilled, in terminal >>
 
