@@ -378,7 +378,7 @@ footer {
     margin-right: auto;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 770) {
     body {
         overflow-y: scroll;
     }
@@ -440,6 +440,52 @@ footer {
         margin: 20px 0;
     }
     
+    .setJumbo {
+        padding: 40px !important;
+    }
+    
+}
+
+@media (max-width: 390px) {
+    .loginPage h3 {
+        font-size: 15px;
+    }
+
+    .loginPage h2 {
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .loginPage p {
+        font-size: 9px;
+    }
+
+    .loginPage .card {
+        height: auto;
+        margin: 20px 0;
+    }
+}
+
+@media (max-width: 330px) {
+    .loginPage h3 {
+        font-size: 15px;
+        margin-top:-30px;
+    }
+
+    .loginPage h2 {
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .loginPage p {
+        display: none;
+    }
+
+    .loginPage .card {
+        height: auto;
+        margin: 10px 0;
+        padding: 0;
+    }
     
     
 }
