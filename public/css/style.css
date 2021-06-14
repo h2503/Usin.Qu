@@ -378,7 +378,7 @@ footer {
     margin-right: auto;
 }
 
-@media (max-width: 770) {
+@media (max-width: 770px) {
     body {
         overflow-y: scroll;
     }
@@ -391,17 +391,16 @@ footer {
         bottom: 70px;
     }
 
-
     .fixed-top {
-        display: flex;
+        display: flex !important;
     }
 
     .fixed-bottom {
-        display: block;
+        display: block !important;
     }
 
     .sidebar {
-        display: none;
+        display: none !important;
     }
     
     footer {
