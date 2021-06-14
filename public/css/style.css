@@ -56,6 +56,23 @@ p {
     font-size: 40px;
 }
 
+/* scrollbar */
+*::-webkit-scrollbar {
+    width: 0.75em;
+    height:0.75em ;
+}
+ 
+*::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+}
+ 
+*::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+  border-radius: 10px;
+}
+
 /* button */
 #updateDelete {
     margin: auto;
@@ -226,10 +243,10 @@ td {
     width: auto;
     background-color: white;
     padding: 10px;
-    border-radius: 3px;
+    border-radius: 5px;
     margin: auto;
     text-align: center;
-    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.2), 0 15px 12px rgba(0, 0, 0, 0.15);
 }
 
 #todoList {
