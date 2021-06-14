@@ -242,9 +242,9 @@ td {
     width: 100%;
 }
 
-.todotext{
-    isolation: isolate;
-    color: #000;
+.todotext {
+    isolation: isolate ;
+    color: #000 !important;
 }
 
 @keyframes fadein {
