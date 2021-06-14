@@ -151,17 +151,17 @@ hr {
   background: var(--text-color);
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-p,
-tr,
-th,
-td,
-form,
-label,
+#mainPage h1,
+#mainPage h2,
+#mainPage h3,
+#mainPage h4,
+#mainPage h5,
+#mainPage p,
+#mainPage tr,
+#mainPage th,
+#mainPage td,
+#mainPage form,
+#mainPage label,
 #example_info,
 #example i {
     color: var(--text-color);
