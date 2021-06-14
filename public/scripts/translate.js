@@ -31,7 +31,7 @@ var arrLang = {
     Dashboard: "Dashboard",
     Add: "Add",
     History: "History",
-    HistorySide: "History Transaction",
+    HistorySide: "Transactions History",
     AdvicesSide: "Tips",
     AdvicesMoney: "Financial Tips",
     Settings: "Settings",
